@@ -1,0 +1,2 @@
+class GameOptionsController < ApplicationController
+end

@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  scope '/api' do
+    get :game, to: 'game_options#index'
+    get :level, to: 'difficulties#index'
+    get :cards, to: 'playing_cards#index'
+  end
 end

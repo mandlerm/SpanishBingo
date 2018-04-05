@@ -9,6 +9,14 @@ class GameCards extends React.Component {
     super(props)
     console.log(props)
 
+  //testing api call
+
+  list = fetch(`/api/food?q=${query}`, {
+  accept: 'application/json',
+  }).then(checkStatus)
+  .then(parseJSON)
+  }
+  console.log(list)
     this.handleClick = this.handleClick.bind(this)
   }
 
