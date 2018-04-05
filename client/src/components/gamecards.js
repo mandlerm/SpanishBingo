@@ -9,31 +9,6 @@ class GameCards extends React.Component {
     super(props)
     console.log(props)
 
-  //testing api call
-console.log('fetching game options')
-  game = fetch(`/api/game`, {
-  accept: 'application/json',
-  }).then(checkStatus)
-  .then(parseJSON)
-  }
-
-  console.log('game options:' game)
-
-console.log('fetching levels')
-  game = fetch(`/api/level`, {
-  accept: 'application/json',
-  }).then(checkStatus)
-  .then(parseJSON)
-  }
-  console.log(level)
-
-console.log('fetching cards')
-  game = fetch(`/api/cards`, {
-  accept: 'application/json',
-  }).then(checkStatus)
-  .then(parseJSON)
-  }
-  console.log(cards)
     this.handleClick = this.handleClick.bind(this)
   }
 
