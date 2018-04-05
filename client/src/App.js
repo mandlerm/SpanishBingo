@@ -6,10 +6,18 @@ class App extends Component {
   constructor() {
     super()
 
-    console.log("game options:")
-
-    console.log("fetching levels")
-    fetch(`/api/level`)
+    fetch(`/api/games`)
+      .then(function(response) {
+        return response.json()
+      })
+      .then(function(myJson) {
+        console.log(myJson)
+      })
+    let sample = "sample"
+    console.log("cards")
+    fetch(`/api/cards?q=${sample}`, {
+      category: "sample"
+    })
       .then(function(response) {
         return response.json()
       })

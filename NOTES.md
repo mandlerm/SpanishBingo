@@ -1,6 +1,15 @@
 launch foreman
 foreman start -p 3000
 
+//working fetch call
+fetch(`/api/game`)
+.then(function(response) {
+return response.json()
+})
+.then(function(myJson) {
+console.log(myJson)
+})
+
 function search(query) {
 return fetch(`/api/food?q=${query}`, {
 accept: 'application/json',
