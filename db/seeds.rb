@@ -1,7 +1,8 @@
 # 3 game category options
-GameOption.create({'name' => 'Food'})
-GameOption.create({'name' => 'Actions'})
-GameOption.create({'name' => 'Things'})
+GameOption.create({'name' => 'Sample Game'})
+# GameOption.create({'name' => 'Food'})
+# GameOption.create({'name' => 'Actions'})
+# GameOption.create({'name' => 'Things'})
 
 # 2 difficulty levels
 Difficulty.create({'level'=> 'Easy'})
