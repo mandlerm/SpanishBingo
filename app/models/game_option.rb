@@ -1,0 +1,2 @@
+class GameOption < ApplicationRecord
+end
