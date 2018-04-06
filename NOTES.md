@@ -1,7 +1,7 @@
 launch foreman
 foreman start -p 3000
 
-//working fetch call
+///working fetch call
 fetch(`/api/game`)
 .then(function(response) {
 return response.json()
@@ -9,6 +9,31 @@ return response.json()
 .then(function(myJson) {
 console.log(myJson)
 })
+
+##//fetch games
+fetch(`/api/games`)
+.then(function(response) {
+return response.json()
+})
+.then(function(myJson) {
+console.log(myJson)
+})
+
+##//fetch cards
+console.log("cards")
+fetch(`/api/cards`, {
+category: "sample" ##make this dynamic. set category to whatever button is selected.
+})
+.then(function(response) {
+return response.json()
+})
+.then(function(myJson) {
+console.log(myJson)
+})
+}
+///end of working fetch calls
+
+//notes from example app
 
 function search(query) {
 return fetch(`/api/food?q=${query}`, {

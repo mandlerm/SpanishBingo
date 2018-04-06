@@ -5,11 +5,11 @@ class PlayingCardsController < ApplicationController
     if q.blank?
         render(
           status: 301,
-          json: PlayingCard.where(["category = 'sample'"])
+          json: PlayingCard.where(category: "sample")
         )
      else render(
        status: 200,
-       json: PlayingCard.where(["category = q"])
+       json: PlayingCard.where([`category = q`])
      )
    end
  end

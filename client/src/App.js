@@ -13,9 +13,10 @@ class App extends Component {
       .then(function(myJson) {
         console.log(myJson)
       })
+
     let sample = "sample"
     console.log("cards")
-    fetch(`/api/cards?q=${sample}`, {
+    fetch(`/api/cards`, {
       category: "sample"
     })
       .then(function(response) {
