@@ -1,5 +1,6 @@
 import React from "react"
 import Category from "./Category"
+import Level from "./Level"
 // container to hold all sidebar items
 
 class Sidebar extends React.Component {
@@ -7,6 +8,7 @@ class Sidebar extends React.Component {
     return (
       <div>
         <Category />
+        <Level />
       </div>
     )
   }

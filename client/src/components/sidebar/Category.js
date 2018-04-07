@@ -9,12 +9,9 @@ const Category = props => {
 
   return (
     <span className="category">
-      {catArray.map(cat => <button className="catButton"> Button </button>)}
+      {catArray.map(cat => <button className="catButton"> {cat} </button>)}
     </span>
   )
-  // return
-  // <div className="board">
-  //   {boardArray.map(card => Card(card))}</div>
 }
 
 export default Category

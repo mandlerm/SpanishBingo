@@ -1,0 +1,14 @@
+.level-btn-group button {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #4caf50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+}
+
+/* Add a background color on hover */
+.level-btn-group button:hover {
+  background-color: #3e8e41;
+}

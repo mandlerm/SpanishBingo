@@ -1,3 +1,15 @@
 import React from "react"
+import "./Level.css"
+//toggle levels
 
-//display level options in toggle format
+let levels = ["easy", "medium", "hard"]
+
+const Level = props => {
+  return (
+    <div class="level-btn-group">
+      {levels.map(level => <button>{level}</button>)}
+    </div>
+  )
+}
+
+export default Level
