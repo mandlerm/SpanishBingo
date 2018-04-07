@@ -1,0 +1,6 @@
+.card {
+  border: 5px solid var(--yellow);
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 50px;
+}
