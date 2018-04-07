@@ -1,4 +1,5 @@
 import React from "react"
+import "./WordDisplay.css"
 
 //component to disply current word with link for play audio
 
@@ -8,7 +9,11 @@ const Word = props => {
 
   //make a border around the box with some shading/style
 
-  return <text class="word">{word}</text>
+  return (
+    <div className="word">
+      <caption class="word">{word}</caption>
+    </div>
+  )
 }
 
 export default Word

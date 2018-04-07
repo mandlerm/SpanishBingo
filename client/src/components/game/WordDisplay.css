@@ -1,0 +1,9 @@
+.word {
+  display: grid;
+  text-align: center;
+  font-size: 1.7em;
+  padding: 10px;
+  line-height: 40px;
+  color: peru;
+  border: 5px solid var(--yellow);
+}

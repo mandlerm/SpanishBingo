@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import logo from "./logo.svg"
 import "./App.css"
 import GameContainer from "./components/game/GameContainer"
+import Sidebar from "./components/sidebar/Sidebar"
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to Spanish Bingo </h1>
         </header>
         <p className="App-intro">Welcome to my React/Redux Project</p>
+        <Sidebar />
         <GameContainer />
       </div>
     )

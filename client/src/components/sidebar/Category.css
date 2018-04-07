@@ -1,0 +1,12 @@
+.category {
+  display: grid;
+  grid-template-columns: 25%;
+}
+
+/* make text appear in center of button */
+.catButton {
+  display: grid;
+  grid-template-columns: 20px 20px;
+  grid-template-rows: 20px 20px;
+  text-align: center;
+}
