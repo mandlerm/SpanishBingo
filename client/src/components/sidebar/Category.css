@@ -1,7 +1,7 @@
 .category {
   padding: 20px;
   display: grid;
-  grid-template-columns: 25%;
+  grid-template-columns: 100%;
 }
 
 /* make text appear in center of button */
@@ -10,4 +10,9 @@
   grid-template-columns: 20px 20px;
   grid-template-rows: 20px 20px;
   text-align: center;
+  margin: 5px;
+}
+
+.catButton:active {
+  background-color: #3e8e41;
 }

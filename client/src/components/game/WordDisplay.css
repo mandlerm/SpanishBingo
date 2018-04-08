@@ -1,9 +1,17 @@
 .word {
   display: grid;
+  grid-template-columns: 75%;
   text-align: center;
   font-size: 1.7em;
   padding: 10px;
   line-height: 40px;
   color: peru;
   border: 5px solid var(--yellow);
+}
+
+.mic {
+  display: grid;
+  /* grid-template-columns: 25%; */
+  text-align: right;
+  color: var(--black);
 }

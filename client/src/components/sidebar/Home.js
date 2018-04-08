@@ -1,3 +1,9 @@
 import React from "react"
+import "./Home.css"
+//clears game board and returns to 'home screen' with welcome and instructions
 
-// button to clear main screen and show welcome message and instuctions (welcome.js)
+const Home = props => {
+  return <button class="home"> RETURN HOME </button>
+}
+
+export default Home

@@ -9,10 +9,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Spanish Bingo </h1>
         </header>
-        <p className="App-intro">Welcome to my React/Redux Project</p>
+        <p className="App-intro">
+          Built with React/Redux on top of a Rails backend
+        </p>
         <Sidebar />
         <GameContainer />
       </div>

@@ -1,5 +1,6 @@
 import React from "react"
 import "./WordDisplay.css"
+import { Icon } from "react-fa"
 
 //component to disply current word with link for play audio
 
@@ -10,8 +11,11 @@ const Word = props => {
   //make a border around the box with some shading/style
 
   return (
-    <div className="word">
-      <caption class="word">{word}</caption>
+    <div>
+      <form className="word">
+        <input class="word" value={word} />
+        <Icon name="microphone" size="3x" className="mic" />
+      </form>
     </div>
   )
 }
