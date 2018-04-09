@@ -5,6 +5,7 @@ import "./App.css"
 import GameContainer from "./components/game/GameContainer"
 import Sidebar from "./components/sidebar/Sidebar"
 import Welcome from "./components/welcome"
+import ScreenContainer from "./components/Screen"
 
 class App extends Component {
   render() {
@@ -16,12 +17,13 @@ class App extends Component {
         <p className="App-intro">
           Built with React/Redux on top of a Rails backend
         </p>
-        <Sidebar />
+        <ScreenContainer />
 
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Welcome} />
-            <Route path="/" component={GameContainer} />
+            <Route path="/:game" component={GameContainer} />
+            <Route component={Welcome} />
           </Switch>
         </BrowserRouter>
       </div>

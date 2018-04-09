@@ -6,7 +6,8 @@ let levels = ["easy", "medium", "hard"]
 
 const Level = props => {
   return (
-    <div class="level-btn-group">
+    <div class="level">
+      <h1 className="heading">Select a level</h1>
       {levels.map(level => <button>{level}</button>)}
     </div>
   )

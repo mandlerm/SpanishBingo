@@ -1,6 +1,6 @@
 .word {
   display: grid;
-  grid-template-columns: 75%;
+  grid-template-columns: 3fr 1fr;
   text-align: center;
   font-size: 1.7em;
   padding: 10px;
@@ -11,7 +11,7 @@
 
 .mic {
   display: grid;
-  /* grid-template-columns: 25%; */
-  text-align: right;
+  text-align: center;
+  vertical-align: bottom;
   color: var(--black);
 }

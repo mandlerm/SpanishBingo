@@ -9,7 +9,10 @@ const Category = props => {
 
   return (
     <span className="category">
-      {catArray.map(cat => <button className="catButton"> {cat} </button>)}
+      <h1 className="heading">Choose a category</h1>
+      {catArray.map(cat => (
+        <button className="lined thin catButton"> {cat} </button>
+      ))}
     </span>
   )
 }
