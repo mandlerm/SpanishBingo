@@ -1,0 +1,21 @@
+.welcomecontainer {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.intro {
+  color: powderblue;
+  font-family: fantasy;
+  font-size: 25px;
+}
+
+.desc {
+  font-family: serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.postscript {
+  font-style: oblique;
+  font-weight: lighter;
+}

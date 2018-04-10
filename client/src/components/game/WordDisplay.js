@@ -13,7 +13,7 @@ const Word = props => {
   return (
     <div>
       <form className="word">
-        <input class="word" value={word} />
+        <input className="word" value={word} />
         <Icon name="microphone" size="3x" className="mic" />
       </form>
     </div>

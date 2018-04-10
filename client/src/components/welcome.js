@@ -3,12 +3,21 @@ import React from "react"
 class Welcome extends React.Component {
   render() {
     return (
-      <p class="intro">
-        Making Spanish a game. <br />
-        Choose a topic. <br />
-        Then choose a difficultly level. <br />
-        After that...well, click and see.
-      </p>
+      <div className="intro">
+        <h1>Welcome to Spanish Bingo</h1>
+        <h3>Where learning Spanish is a game</h3>
+        <p className="desc">
+          Choose a category. <br />
+          <br />
+          Choose a difficulty level. <br />
+          <br />
+          After that...well, click and see.
+        </p>
+
+        <h5 className="postscript">
+          (Coming soon...new categories & score keeping)
+        </h5>
+      </div>
     )
   }
 }
