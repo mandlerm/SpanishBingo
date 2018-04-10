@@ -8,6 +8,18 @@ import PlayContainer from "./components/PlayContainer"
 import WelcomeContainer from "./components/WelcomeContainer"
 
 class App extends Component {
+  componentDidMount() {
+    let gameList
+    fetch(`/api/games`, { category: `event.target.value` })
+      .then(function(response) {
+        return response.json()
+      })
+      .then(function(myJson) {
+        console.log(myJson)
+        gameList = myJson
+        console.log(gameList)
+      })
+  }
   render() {
     return (
       <div className="App">
