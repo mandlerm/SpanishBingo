@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { Provider } from "react-redux"
+import store from "./store"
 import "./App.css"
 import Welcome from "./components/welcome"
 import PlayContainer from "./components/PlayContainer"
@@ -17,11 +19,13 @@ class App extends Component {
         </header>
 
         <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={WelcomeContainer} />
-            <Route path="/:game" component={PlayContainer} />
-            <Route component={Welcome} />
-          </Switch>
+          <Provider store={store}>
+            <Switch>
+              <Route exact path="/" component={WelcomeContainer} />
+              <Route path="/:game" component={PlayContainer} />
+              <Route component={Welcome} />
+            </Switch>
+          </Provider>
         </BrowserRouter>
       </div>
     )

@@ -6,7 +6,11 @@ import { shape, string } from "prop-types"
 const Card = props => {
   //<h3>this.props.name<h3/>
 
-  return <h1 className="card"> card </h1>
+  return (
+    <h1 className="card" key={props.id}>
+      card
+    </h1>
+  )
 }
 
 Card.propTypes = {
