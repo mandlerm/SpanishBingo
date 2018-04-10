@@ -1,4 +1,4 @@
-import { SET_GAME_CATEGORY } from "./actions"
+import { SET_GAME_CATEGORY } from "../actions/actions"
 
 const DEFAULT_STATE = {
   category: "sample"

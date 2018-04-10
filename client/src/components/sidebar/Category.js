@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import "./Category.css"
-import { setGameCategory } from "../../actionCreators"
+import { setGameCategory } from "../../actions/actionCreators"
 //disply category selection in button form.  highligh current selection
 
 let catArray = ["sample", "food", "things"]
