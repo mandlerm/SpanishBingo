@@ -6,30 +6,51 @@ import { setGameCategory } from "../../actionCreators"
 
 let catArray = ["sample", "food", "things"]
 
-const Category = props => {
-  //<h3>this.props.name<h3/>
+class Category extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handleGameCategoryChange = this.handleGameCategoryChange.bind(this)
+  }
 
-  return (
-    <span className="category">
-      <h1 className="heading">Choose a category</h1>
-      {catArray.map(cat => (
-        <button
-          className="lined thin catButton"
-          onClick={props.handleGameCategoryChange}
-          key={cat.id}>
-          {" "}
-          {cat}{" "}
-        </button>
-      ))}
-    </span>
-  )
-}
-
-const mapStateToProps = state => ({ gameCategory: state.gameCategory })
-const mapDispatchToProps = (dispatch: Function) => ({
+  //click handler working
+  //I think fetch is working correctly
+  //need to save this choice into state
   handleGameCategoryChange(event) {
     console.log(event.target.value)
-    dispatch(setGameCategory(event.target.value))
+    fetch(`/api/cards`, { category: `event.target.value` })
+      .then(function(response) {
+        return response.json()
+      })
+      .then(function(myJson) {
+        console.log(myJson)
+      })
   }
-})
-export default connect(mapStateToProps)(Category)
+
+  render() {
+    return (
+      <div className="category">
+        <h1 className="heading">Choose a category</h1>
+        {catArray.map(cat => (
+          <button
+            onClick={this.handleGameCategoryChange}
+            className="lined thin catButton"
+            key={cat.id}
+            value={cat}>
+            {cat}
+          </button>
+        ))}
+      </div>
+    )
+  }
+}
+
+// const mapStateToProps = state => ({ gameCategory: state.gameCategory })
+// const mapDispatchToProps = (dispatch: Function) => ({
+//   handleGameCategoryChange(event) {
+//     console.log(event.target.value)
+//     dispatch(setGameCategory(event.target.value))
+//   }
+// })
+// export default connect(mapStateToProps)(Category)
+
+export default Category
