@@ -16,7 +16,6 @@ class Category extends React.Component {
   //I think fetch is working correctly
   //need to save this choice into state
   handleGameCategoryChange(event) {
-    console.log(event.target.value)
     fetch(`/api/cards`, { category: `event.target.value` })
       .then(function(response) {
         return response.json()
