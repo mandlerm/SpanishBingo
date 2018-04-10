@@ -10,6 +10,9 @@ import WelcomeContainer from "./components/WelcomeContainer"
 class App extends Component {
   componentDidMount() {
     let gameList
+    let level
+
+    //:id, :name
     fetch(`/api/games`, { category: `event.target.value` })
       .then(function(response) {
         return response.json()
@@ -18,6 +21,17 @@ class App extends Component {
         console.log(myJson)
         gameList = myJson
         console.log(gameList)
+      })
+
+    //:id, :level
+    fetch(`/api/level`, { category: `event.target.value` })
+      .then(function(response) {
+        return response.json()
+      })
+      .then(function(myJson) {
+        console.log(myJson)
+        level = myJson
+        console.log(level)
       })
   }
   render() {
