@@ -6,6 +6,7 @@ import "./App.css"
 import Welcome from "./components/welcome"
 import PlayContainer from "./components/PlayContainer"
 import WelcomeContainer from "./components/WelcomeContainer"
+import WordList from "./components/WordList"
 import Header from "./components/header"
 
 class App extends Component {
@@ -44,6 +45,7 @@ class App extends Component {
               <Header />
               <Switch>
                 <Route exact path="/" component={WelcomeContainer} />
+                <Route exact path="/wordlist" component={WordList} />
                 <Route path="/:game" component={PlayContainer} />
                 <Route component={Welcome} />
               </Switch>
