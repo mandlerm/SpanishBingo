@@ -1,1 +1,2 @@
 export const SET_GAME_CATEGORY = "SET_GAME_CATEGORY"
+export const SET_GAME_LEVEL = "SET_GAME_LEVEL"

@@ -1,14 +1,23 @@
 import React, { Component } from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { createStore, applyMiddleware, compose } from "redux"
 import { Provider } from "react-redux"
-import store from "./store"
+import thunk from "redux-thunk"
+import reducer from "./reducers/reducer"
 import "./App.css"
 import Welcome from "./components/welcome"
 import PlayContainer from "./components/PlayContainer"
 import WelcomeContainer from "./components/WelcomeContainer"
 import WordList from "./components/WordList"
 import Header from "./components/header"
+import ItemList from "./components/WordList"
+import configureStore from "./store/configureStore"
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const store = configureStore()
+
+//start - fetch initial options - category, gameLevel
+//store.dispatch(getCategories())
 class App extends Component {
   componentDidMount() {
     let gameList
