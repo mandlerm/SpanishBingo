@@ -1,5 +1,12 @@
 .home {
   display: grid;
-
   font-size: 1.3em;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 100;
+
+  /* margin: 2rem; */
+}
+
+.lists {
 }
