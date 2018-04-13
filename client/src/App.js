@@ -1,8 +1,5 @@
 import React, { Component } from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import { createStore, applyMiddleware, compose } from "redux"
-import { Provider } from "react-redux"
-import thunk from "redux-thunk"
 import reducer from "./reducers/reducer"
 import "./App.css"
 import Welcome from "./components/welcome"
@@ -11,10 +8,10 @@ import WelcomeContainer from "./components/WelcomeContainer"
 import WordList from "./components/WordList"
 import Header from "./components/header"
 import ItemList from "./components/WordList"
-import configureStore from "./store/configureStore"
+// import configureStore from "./store/configureStore"
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-const store = configureStore()
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+// const store = configureStore()
 
 //start - fetch initial options - category, gameLevel
 //store.dispatch(getCategories())
@@ -49,17 +46,15 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <Provider store={store}>
-            <div>
-              <Header />
-              <Switch>
-                <Route exact path="/" component={WelcomeContainer} />
-                <Route exact path="/wordlist" component={WordList} />
-                <Route path="/:game" component={PlayContainer} />
-                <Route component={Welcome} />
-              </Switch>
-            </div>
-          </Provider>
+          <div>
+            <Header />
+            <Switch>
+              <Route exact path="/" component={WelcomeContainer} />
+              <Route exact path="/wordlist" component={WordList} />
+              <Route path="/:game" component={PlayContainer} />
+              <Route component={Welcome} />
+            </Switch>
+          </div>
         </BrowserRouter>
       </div>
     )
