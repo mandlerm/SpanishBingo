@@ -6,3 +6,7 @@
 //       return state
 //   }
 // }
+
+export default function() {
+  return [{ level: "easy" }, { level: "hard" }, { level: "super fast" }]
+}

@@ -1,7 +1,7 @@
 import React from "react"
-import WordDisplay from "./WordDisplay"
-import Board from "./Board"
-import "./Board.css"
+import WordDisplay from "./wordDisplay"
+import Board from "./board"
+import "./board.css"
 // container to display all aspects of game secion
 
 class GameContainer extends React.Component {

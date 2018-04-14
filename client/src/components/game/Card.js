@@ -1,5 +1,5 @@
 import React from "react"
-import "./Card.css"
+import "./card.css"
 import { shape, string } from "prop-types"
 //individual cards
 

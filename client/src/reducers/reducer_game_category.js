@@ -9,3 +9,11 @@
 //       return state
 //   }
 // }
+
+export default function() {
+  return [
+    { category: "sample" },
+    { category: "food" },
+    { category: "household" }
+  ]
+}

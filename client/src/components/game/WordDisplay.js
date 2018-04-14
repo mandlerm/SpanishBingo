@@ -1,5 +1,5 @@
 import React from "react"
-import "./WordDisplay.css"
+import "./wordDisplay.css"
 import { Icon } from "react-fa"
 
 //component to disply current word with link for play audio

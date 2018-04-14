@@ -7,6 +7,7 @@ import { createStore, applyMiddleware, compose } from "redux"
 import { browserHistory } from "react-router"
 import thunk from "redux-thunk"
 import rootReducer from "./reducers"
+import { composeWithDevTools } from "redux-devtools-extension"
 import "./index.css"
 
 const store = createStore(
@@ -16,6 +17,8 @@ const store = createStore(
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 )
+
+// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
 
 ReactDOM.render(
   <Provider store={store}>

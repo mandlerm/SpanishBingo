@@ -1,8 +1,8 @@
 import React from "react"
-import Category from "./Category"
-import Level from "./Level"
-import Home from "./Home"
-import "./Sidebar.css"
+import Category from "../../containers/category"
+import Level from "../../containers/level"
+import Home from "./home"
+import "./sidebar.css"
 
 class Sidebar extends React.Component {
   render() {
