@@ -13,6 +13,13 @@ class PlayingCardsController < ApplicationController
      )
    end
  end
+
+ def show
+   render(
+     status: 200,
+     json: PlayingCard.all()
+   )
+ end
 end
 
 

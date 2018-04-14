@@ -1,6 +1,6 @@
 # 3 game category options
 GameOption.create({'name' => 'Sample Game', 'db_name' => 'sample'})
-# GameOption.create({'name' => 'Food'})
+GameOption.create({'name' => 'Food - coming soon'})
 # GameOption.create({'name' => 'Actions'})
 # GameOption.create({'name' => 'Things'})
 
