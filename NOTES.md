@@ -1,3 +1,7 @@
+1. when home is clicked, change what is shown to WelcomeContainer
+2. when category is selected, change ROUTE NAME to match category
+   2b. when category is selected, set STATE boardSize to 16.
+
 launch foreman
 foreman start -p 3000
 

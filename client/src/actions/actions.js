@@ -35,8 +35,23 @@ export function setCategory(gameChoice) {
     return fetch(`/api/cards?q=sample`)
       .then(response => response.json())
       .then(cards => {
-        console.log(cards)
         dispatch({ type: SET_CATEGORY, payload: cards })
       })
   }
+}
+
+export function setLevel(levelChoice) {
+  let setup = {}
+  switch (levelChoice) {
+    case "Easy":
+      setup = { cardCount: 9, time: 60 }
+      break
+    case "Not quite as easy":
+      setup = { cardCount: 16, time: 60 }
+      break
+    case "Fast":
+      setup = { cardCount: 16, time: 30 }
+      break
+  }
+  return { type: SET_LEVEL, payload: setup }
 }

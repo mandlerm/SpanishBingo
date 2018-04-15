@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import "./level.css"
 import { bindActionCreators } from "redux"
-import { fetchLevels } from "../actions/actions"
+import { fetchLevels, setLevel } from "../actions/actions"
 //toggle levels
 
 class Level extends React.Component {
@@ -15,9 +15,10 @@ class Level extends React.Component {
       return "Loading"
     }
     return this.props.level.map(level => {
+      console.log("level choice: ", level)
       return (
         <button
-          onClick={this.handleLevelChange}
+          onClick={() => this.props.setLevel(level.level)}
           className="lined thin catButton"
           key={level.level}
           value={level.level}>
@@ -44,7 +45,10 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchLevels: fetchLevels }, dispatch)
+  return bindActionCreators(
+    { fetchLevels: fetchLevels, setLevel: setLevel },
+    dispatch
+  )
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Level)

@@ -14,7 +14,6 @@ class Category extends React.Component {
       return "Loading"
     }
     return this.props.category.map(cat => {
-      console.log(cat)
       return (
         <button
           onClick={() => this.props.setCategory(cat.db_name)}
