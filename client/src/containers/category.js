@@ -1,10 +1,8 @@
 import React from "react"
 import { connect } from "react-redux"
 import "./category.css"
-import { setGameCategory } from "../actions/actionCreators"
-//disply category selection in button form.  highligh current selection
-
-let catArray = ["sample", "food", "things"]
+import { bindActionCreators } from "redux"
+import { setCategoryOptions } from "../actions/actions"
 
 class Category extends React.Component {
   // constructor(props) {
@@ -16,7 +14,9 @@ class Category extends React.Component {
   //click handler working
   //I think fetch is working correctly
   //need to save this choice into state
-  // handleGameCategoryChange(event) {
+  handleGameCategoryChange(event) {
+    console.log("i'm choosing a topic")
+  }
   //   fetch(`/api/cards`, { category: `event.target.value` })
   //     .then(function(response) {
   //       return response.json()
@@ -27,9 +27,10 @@ class Category extends React.Component {
   // }
   renderCategories() {
     return this.props.category.map(cat => {
+      console.log(cat)
       return (
         <button
-          onClick={this.handleGameCategoryChange}
+          onClick={() => this.props.setCategoryOptions(cat)}
           className="lined thin catButton"
           key={cat.category}
           value={cat.category}>
@@ -71,6 +72,14 @@ function mapStateToProps(state) {
     category: state.games
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { setCategoryOptions: setCategoryOptions },
+    dispatch
+  )
+}
+
 // const mapDispatchToProps = (dispatch: Function) => ({
 //   handleGameCategoryChange(event) {
 //     console.log(event.target.value)
@@ -78,4 +87,4 @@ function mapStateToProps(state) {
 //   }
 // })
 
-export default connect(mapStateToProps)(Category)
+export default connect(mapStateToProps, mapDispatchToProps)(Category)
