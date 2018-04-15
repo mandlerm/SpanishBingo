@@ -1,24 +1,19 @@
 import React from "react"
 import { connect } from "react-redux"
 import "./level.css"
+import { bindActionCreators } from "redux"
+import { fetchLevels } from "../actions/actions"
 //toggle levels
 
 class Level extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.handleLevelChange = this.handleLevelChange.bind(this)
-  // }
-
-  handleLevelChange(event) {
-    //if easy is selected, only display 9 cards
-    console.log("Im selecting a level")
+  componentDidMount() {
+    this.props.fetchLevels()
   }
 
   renderLevels() {
-    if (!this.props.levels) {
+    if (!this.props.level) {
       return "Loading"
     }
-    console.log(this.props)
     return this.props.level.map(level => {
       return (
         <button
@@ -43,15 +38,14 @@ class Level extends React.Component {
 }
 
 function mapStateToProps(state) {
+  console.log(state.level.levels, "state in  levels")
   return {
-    level: state.levels
+    level: state.level.levels
   }
 }
-// const mapDispatchToProps = (dispatch: Function) => ({
-//   handleGameCategoryChange(event) {
-//     console.log(event.target.value)
-//     dispatch(setGameCategory(event.target.value))
-//   }
-// })
 
-export default connect(mapStateToProps)(Level)
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchLevels: fetchLevels }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Level)

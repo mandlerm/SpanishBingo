@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import reducer from "./reducers/reducer"
 import { connect } from "react-redux"
 // import store from "./index.js"
 import "./App.css"
