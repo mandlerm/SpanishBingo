@@ -1,5 +1,6 @@
 class PlayingCardsController < ApplicationController
   def index
+    puts(params)
     q = params[:q]
     puts(params)
     if q.blank?
@@ -9,7 +10,7 @@ class PlayingCardsController < ApplicationController
         )
      else render(
        status: 200,
-       json: PlayingCard.where([`category = q`])
+       json: PlayingCard.where(category: q)
      )
    end
  end

@@ -17,54 +17,6 @@ import ItemList from "./components/wordList"
 //start - fetch initial options - category, gameLevel
 //store.dispatch(getCategories())
 class App extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = { categories: [], levels: [] }
-
-    // fetch(`/api/games`)
-    //   .then(function(response) {
-    //     return response.json()
-    //   })
-    //   .then(function(categories) {
-    //     console.log(categories)
-    //     this.setState({ categories: categories })
-    //     console.log(this.state)
-    //   })
-  }
-  // componentDidMount() {
-  //   let gameList
-  //   let level
-  //
-  //   fetch(`/api/games`, { category: `event.target.value` }).then(response => {
-  //     store.dispatch({
-  //       type: "SET_CATEGORY_OPTIONS",
-  //       users: response.json()
-  //     })
-  //   })
-
-  //:id, :name
-  // fetch(`/api/games`, { category: `event.target.value` })
-  //   .then(function(response) {
-  //     return response.json()
-  //   })
-  //   .then(function(myJson) {
-  //     console.log(myJson)
-  //     gameList = myJson
-  //     console.log(gameList)
-  //   })
-
-  //:id, :level
-  //   fetch(`/api/level`, { category: `event.target.value` })
-  //     .then(function(response) {
-  //       return response.json()
-  //     })
-  //     .then(function(myJson) {
-  //       console.log(myJson)
-  //       level = myJson
-  //       console.log(level)
-  //     })
-  // }
   render() {
     return (
       <div className="App">
@@ -85,8 +37,3 @@ class App extends Component {
 }
 
 export default App
-// const mapStateToProps = (state) => {
-//   return { items: state.items };
-// };
-//
-// export default connect(mapStateToProps)(App);

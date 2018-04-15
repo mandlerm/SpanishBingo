@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from "react-redux"
 import "./category.css"
 import { bindActionCreators } from "redux"
-import { fetchCategories } from "../actions/actions"
+import { fetchCategories, setCategory } from "../actions/actions"
 
 class Category extends React.Component {
   componentDidMount() {
@@ -14,9 +14,10 @@ class Category extends React.Component {
       return "Loading"
     }
     return this.props.category.map(cat => {
+      console.log(cat)
       return (
         <button
-          onClick={() => this.props.listGameCategories(cat)}
+          onClick={() => this.props.setCategory(cat.db_name)}
           className="lined thin catButton"
           key={cat.name}
           value={cat.name}>
@@ -43,7 +44,10 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchCategories: fetchCategories }, dispatch)
+  return bindActionCreators(
+    { fetchCategories: fetchCategories, setCategory: setCategory },
+    dispatch
+  )
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category)

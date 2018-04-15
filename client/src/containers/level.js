@@ -38,7 +38,6 @@ class Level extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state.level.levels, "state in  levels")
   return {
     level: state.level.levels
   }

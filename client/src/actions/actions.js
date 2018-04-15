@@ -28,3 +28,15 @@ export function fetchLevels() {
       })
   }
 }
+
+export function setCategory(gameChoice) {
+  console.log("cateogory name", gameChoice)
+  return dispatch => {
+    return fetch(`/api/cards?q=sample`)
+      .then(response => response.json())
+      .then(cards => {
+        console.log(cards)
+        dispatch({ type: SET_CATEGORY, payload: cards })
+      })
+  }
+}

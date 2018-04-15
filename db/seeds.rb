@@ -1,7 +1,7 @@
 # 3 game category options
-GameOption.create({'name' => 'Sample Game'})
-GameOption.create({'name' => 'Food - coming soon' })
-GameOption.create({'name' => 'Things - coming soon'})
+GameOption.create({'name' => 'Sample Game', 'db_name' => 'sample'})
+GameOption.create({'name' => 'Food - coming soon', 'db_name' => 'food' })
+GameOption.create({'name' => 'Things - coming soon', 'db_name' => 'things'})
 # GameOption.create({'name' => 'Actions'})
 # GameOption.create({'name' => 'Things'})
 
