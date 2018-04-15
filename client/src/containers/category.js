@@ -2,39 +2,27 @@ import React from "react"
 import { connect } from "react-redux"
 import "./category.css"
 import { bindActionCreators } from "redux"
-import { setCategoryOptions } from "../actions/actions"
+import { fetchCategories } from "../actions/actions"
 
 class Category extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.handleGameCategoryChange = this.handleGameCategoryChange.bind(this)
-  //   console.log(this.state)
-  // }
-
-  //click handler working
-  //I think fetch is working correctly
-  //need to save this choice into state
-  handleGameCategoryChange(event) {
-    console.log("i'm choosing a topic")
+  componentWillMount() {
+    this.props.fetchCategories()
   }
-  //   fetch(`/api/cards`, { category: `event.target.value` })
-  //     .then(function(response) {
-  //       return response.json()
-  //     })
-  //     .then(function(myJson) {
-  //       console.log(myJson)
-  //     })
-  // }
+
   renderCategories() {
+    if (!this.props.category) {
+      console.log("no")
+      return "Loading"
+    }
+    console.log("props", this.props.category)
     return this.props.category.map(cat => {
-      console.log(cat)
       return (
         <button
-          onClick={() => this.props.setCategoryOptions(cat)}
+          // onClick={() => this.props.listGameCategories(cat)}
           className="lined thin catButton"
-          key={cat.category}
-          value={cat.category}>
-          {cat.category}
+          key={cat.name}
+          value={cat.name}>
+          {cat.db_name}
         </button>
       )
     })
@@ -68,23 +56,14 @@ class Category extends React.Component {
 //the component as this.props. I can now say this.props
 //this is our link between Redux and React - it lets me access STATE
 function mapStateToProps(state) {
+  console.log("state", state.setup.categories)
   return {
-    category: state.games
+    category: state.setup.categories
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    { setCategoryOptions: setCategoryOptions },
-    dispatch
-  )
+  return bindActionCreators({ fetchCategories: fetchCategories }, dispatch)
 }
-
-// const mapDispatchToProps = (dispatch: Function) => ({
-//   handleGameCategoryChange(event) {
-//     console.log(event.target.value)
-//     dispatch(setGameCategory(event.target.value))
-//   }
-// })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category)

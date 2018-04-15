@@ -15,6 +15,9 @@ class Level extends React.Component {
   }
 
   renderLevels() {
+    if (!this.props.levels) {
+      return "Loading"
+    }
     console.log(this.props)
     return this.props.level.map(level => {
       return (
