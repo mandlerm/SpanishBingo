@@ -3,19 +3,35 @@ import "./card.css"
 import { shape, string } from "prop-types"
 //individual cards
 
-const Card = props => {
+class Card extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log("props", props)
+    this.handleClick = this.handleClick.bind(this)
+  }
   //<h3>this.props.name<h3/>
-  console.log(props)
-  return (
-    <img
-      src={props.image}
-      alt={props.english}
-      className="card"
-      key={props.id}
-      width="100%"
-      height="100%"
-    />
-  )
+  handleClick = event => {
+    console.log("i clicked a box", event)
+    let audio = event.audio
+    console.log(audio)
+    // audio.play()
+  }
+
+  render() {
+    // console.log(props.display)
+    return (
+      <figure className="card" key={this.props.display.id}>
+        <img
+          src={this.props.display.image}
+          alt={this.props.display.english}
+          width="100%"
+          height="100%"
+          onClick={e => this.handleClick(this.props.display)}
+        />
+        // <audio src={this.props.display.audio} />
+      </figure>
+    )
+  }
 }
 
 Card.propTypes = {

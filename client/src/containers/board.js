@@ -5,19 +5,6 @@ import Card from "../components/game/card"
 import { currentGameBoard } from "../actions/actions"
 
 class Board extends React.Component {
-  // componentDidMount() {
-  //   console.log("state", this.props.state)
-  //   let numberofCards = this.props.state.level.cardNumber
-  //   let timer = this.props.state.level.time
-  //
-  //   let shuffledGameArray = this.props.state.cards.cards.sort(function(a, b) {
-  //     return 0.5 - Math.random()
-  //   })
-  //
-  //   this.props.currentGameBoard(shuffledGameArray.slice(0, numberofCards))
-  //   console.log(this.props.state.game.board)
-  // }
-
   render() {
     console.log("board", this.props.state.cards.board)
     if (!this.props.state.cards.board) {
@@ -25,7 +12,7 @@ class Board extends React.Component {
     }
     return (
       <div className="board">
-        {this.props.state.cards.board.map(card => Card(card))}
+        {this.props.state.cards.board.map(card => <Card display={card} />)}
       </div>
     )
   }
