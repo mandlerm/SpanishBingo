@@ -4,14 +4,27 @@ import { bindActionCreators } from "redux"
 import Card from "../components/game/card"
 import { currentGameBoard } from "../actions/actions"
 
+//***** How do I update state with current board????
 class Board extends React.Component {
-  render() {
-    console.log("board", this.props.state.cards.board)
-    if (!this.props.state.cards.board) {
+  // componentWillMount() {
+  //   let shuffledGameArray = this.props.state.cards.cards.sort(function(a, b) {
+  //     return 0.5 - Math.random()
+  //   })
+  //
+  //   //going to return 9 cards for easy game, 16 cards for standard game.
+  //   let leveledBoard = shuffledGameArray.slice(
+  //     0,
+  //     this.props.state.level.cardNumber
+  //   )
+  //   this.props.currentGameBoard(leveledBoard)
+  //
+  // }
+
+  renderBoard() {
+    if (!this.props.state.cards.cards) {
       return "loading"
     }
-    //shuffles order of cards each time
-    let shuffledGameArray = this.props.state.cards.board.sort(function(a, b) {
+    let shuffledGameArray = this.props.state.cards.cards.sort(function(a, b) {
       return 0.5 - Math.random()
     })
 
@@ -20,12 +33,13 @@ class Board extends React.Component {
       0,
       this.props.state.level.cardNumber
     )
+    // this.props.currentGameBoard(leveledBoard)
 
-    return (
-      <div className="board">
-        {leveledBoard.map(card => <Card display={card} />)}
-      </div>
-    )
+    return leveledBoard.map(card => <Card display={card} />)
+  }
+
+  render() {
+    return <div className="board">{this.renderBoard()}</div>
   }
 }
 
