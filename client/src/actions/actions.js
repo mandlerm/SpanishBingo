@@ -43,7 +43,7 @@ export function setCategory(gameChoice) {
 }
 
 export function setLevel(levelChoice) {
-  console.log("level choice")
+  console.log("level choice", levelChoice)
   let setup = {}
   switch (levelChoice) {
     case "Easy":

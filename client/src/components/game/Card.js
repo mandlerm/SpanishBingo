@@ -19,6 +19,7 @@ class Card extends React.Component {
 
   render() {
     // console.log(props.display)
+    // <audio src={this.props.display.audio} />
     return (
       <figure className="card" key={this.props.display.id}>
         <img
@@ -28,7 +29,6 @@ class Card extends React.Component {
           height="100%"
           onClick={e => this.handleClick(this.props.display)}
         />
-        // <audio src={this.props.display.audio} />
       </figure>
     )
   }

@@ -10,9 +10,20 @@ class Board extends React.Component {
     if (!this.props.state.cards.board) {
       return "loading"
     }
+    //shuffles order of cards each time
+    let shuffledGameArray = this.props.state.cards.board.sort(function(a, b) {
+      return 0.5 - Math.random()
+    })
+
+    //going to return 9 cards for easy game, 16 cards for standard game.
+    let leveledBoard = shuffledGameArray.slice(
+      0,
+      this.props.state.level.cardNumber
+    )
+
     return (
       <div className="board">
-        {this.props.state.cards.board.map(card => <Card display={card} />)}
+        {leveledBoard.map(card => <Card display={card} />)}
       </div>
     )
   }

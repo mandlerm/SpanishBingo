@@ -3,14 +3,14 @@ ROUTING
 1. when home is clicked, change what is shown to WelcomeContainer
 2. when category is selected, change ROUTE NAME to match category
    2b. when category is selected, set STATE boardSize to 16.
+3. when Easy is selected - re-arrange board to be 3x3 grid
+   GAME function
 
-GAME function
-
-1. display cards - set number based on level.cardNumber
-2. display word in wordbar
+4. display cards - set number based on level.cardNumber
+5. display word in wordbar
    2b. set time for displaying word
-3. on card click, say word and animate
-4. compare card to wordbar - deal with accordingly.
+6. on card click, say word and animate
+7. compare card to wordbar - deal with accordingly.
 
 launch foreman
 foreman start -p 3000
