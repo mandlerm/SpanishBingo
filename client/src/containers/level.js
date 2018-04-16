@@ -45,10 +45,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    { fetchLevels: fetchLevels, setLevel: setLevel },
-    dispatch
-  )
+  return bindActionCreators({ fetchLevels, setLevel }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Level)

@@ -4,7 +4,13 @@ export default function(
 ) {
   switch (action.type) {
     case "SET_CATEGORY":
-      return { ...state, cards: action.payload, loading: false }
+      console.log("inside set cat: ", action.payload)
+      return {
+        ...state,
+        cards: action.payload,
+        board: action.payload,
+        loading: false
+      }
     default:
       return state
   }

@@ -2,6 +2,7 @@ import { combineReducers } from "redux"
 import categoryReducer from "./category_reducer"
 import levelReducer from "./level_reducer"
 import setCategoryReducer from "./set_category_reducer"
+import setGameReducer from "./set_game_reducer"
 
 //import each reducer (need one reducer for each piece of data/state)
 //reducers hold all the state update logic
@@ -10,7 +11,8 @@ import setCategoryReducer from "./set_category_reducer"
 const rootReducer = combineReducers({
   category: categoryReducer,
   level: levelReducer,
-  cards: setCategoryReducer
+  cards: setCategoryReducer,
+  game: setGameReducer
 })
 
 export default rootReducer

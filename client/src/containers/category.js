@@ -43,10 +43,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    { fetchCategories: fetchCategories, setCategory: setCategory },
-    dispatch
-  )
+  return bindActionCreators({ fetchCategories, setCategory }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category)

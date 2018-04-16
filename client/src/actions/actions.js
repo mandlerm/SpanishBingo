@@ -4,6 +4,8 @@ export const FETCH_LEVELS = "FETCH_LEVELS"
 export const LOADING_LEVELS = "LOADING_LEVELS"
 export const SET_CATEGORY = "SET_CATEGORY"
 export const SET_LEVEL = "SET_LEVEL"
+export const SET_BOARD = "SET_BOARD"
+
 export const DISPLAY_GAME = "DISPLAY_GAME"
 export const CLICK_CARD = "CLICK_CARD"
 
@@ -41,6 +43,7 @@ export function setCategory(gameChoice) {
 }
 
 export function setLevel(levelChoice) {
+  console.log("level choice")
   let setup = {}
   switch (levelChoice) {
     case "Easy":
@@ -54,4 +57,9 @@ export function setLevel(levelChoice) {
       break
   }
   return { type: SET_LEVEL, payload: setup }
+}
+
+export function currentGameBoard(board) {
+  console.log("board ", board)
+  return { type: SET_BOARD, payload: board }
 }

@@ -5,11 +5,16 @@ import { shape, string } from "prop-types"
 
 const Card = props => {
   //<h3>this.props.name<h3/>
-
+  console.log(props)
   return (
-    <h1 className="card" key={props.id}>
-      card
-    </h1>
+    <img
+      src={props.image}
+      alt={props.english}
+      className="card"
+      key={props.id}
+      width="100%"
+      height="100%"
+    />
   )
 }
 

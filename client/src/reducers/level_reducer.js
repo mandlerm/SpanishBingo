@@ -1,5 +1,5 @@
 export default (
-  state = { loading: false, levels: [], cardNumber: 16 },
+  state = { loading: false, levels: [], cardNumber: 16, time: 60 },
   action
 ) => {
   switch (action.type) {
@@ -8,7 +8,12 @@ export default (
     case "FETCH_LEVELS":
       return { ...state, levels: action.payload, loading: false }
     case "SET_LEVEL":
-      return { ...state, cardNumber: 9, loading: false }
+      return {
+        ...state,
+        cardNumber: action.payload.cardCount,
+        time: action.payload.time,
+        loading: false
+      }
     default:
       return state
   }
