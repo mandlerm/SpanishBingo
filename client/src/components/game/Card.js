@@ -12,9 +12,9 @@ class Card extends React.Component {
   //<h3>this.props.name<h3/>
   handleClick = event => {
     console.log("i clicked a box", event)
-    let audio = event.audio
+    let audio = new Audio(event.audio)
     console.log(audio)
-    // audio.play()
+    audio.play()
   }
 
   render() {
