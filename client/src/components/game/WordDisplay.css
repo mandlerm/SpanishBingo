@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
   text-align: center;
+  align-items: center;
   font-size: 1.7em;
   padding: 10px;
   line-height: 40px;

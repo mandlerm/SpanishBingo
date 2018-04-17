@@ -8,8 +8,6 @@ export default function(
       return {
         ...state,
         cards: action.payload,
-        // level: action.payload,
-        // board: action.payload,
         loading: false
       }
     default:

@@ -1,11 +1,13 @@
 .timer {
   display: grid;
-  align-items: center;
+  grid-template-columns: 1fr;
+  /* align-items: center; */
   text-align: center;
-  font-size: 1.7em;
+  font-size: 1.5em;
   padding: 10px;
+  margin: 10px;
   line-height: 40px;
-  color: peru;
+  color: white;
   border: 5px solid var(--yellow);
 }
 
