@@ -12,6 +12,22 @@
 }
 
 .clock {
+  display: grid;
+  align-items: left;
+  grid-template-columns: 0.8fr;
+
   font-size: 5em;
-  font-size-adjust: auto;
+  /* font-size-adjust: auto; */
+}
+
+.react-countdown-clock {
+  display: inline;
+}
+
+canvas {
+  position: inherit;
+  display: grid;
+  align-items: left;
+  grid-template-columns: 0.8fr;
+  padding: 10px;
 }

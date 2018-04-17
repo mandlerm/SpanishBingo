@@ -1,38 +1,30 @@
 import React from "react"
 import { connect } from "react-redux"
-// import "./timer.css"
 import { bindActionCreators } from "redux"
-// import Countdown from "react-countdown-now"
 import { timerCountdown, stopTimer } from "../actions/actions"
 import "./timer.css"
-import ReactInterval from "react-interval"
-// import { fetchLevels, setLevel } from "../actions/actions"
-//toggle levels
-//https://www.npmjs.com/package/react-interval
-const KeepCounting = props => {
-  console.log("props", props.props.level)
-  if (props.props.level === 0) {
-    let enabled = false
-    props.props.stopTimer()
-    return <h1>GAME OVER</h1>
-  } else {
-    return (
-      <ReactInterval
-        timeout={1000}
-        enabled={props.props.start}
-        callback={() => props.props.timerCountdown()}
-      />
-    )
-  }
-}
+import ReactCountdownClock from "react-countdown-clock"
+//https://github.com/pughpugh/react-countdown-clock
 
+// need to delay time until game board is loaded
 class Timer extends React.Component {
+  componentWillUnmount() {}
+
+  gameOver = () => {
+    alert("Game Over")
+  }
   render() {
     return (
       <div className="timer">
         Timer: <br />
-        <KeepCounting props={this.props} />
-        {this.props.level}
+        <ReactCountdownClock
+          className="clock"
+          seconds={this.props.level}
+          color="#000"
+          alpha={0.9}
+          size={100}
+          onComplete={() => this.gameOver()}
+        />
       </div>
     )
   }

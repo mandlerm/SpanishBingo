@@ -1,5 +1,4 @@
 .sidebar {
   display: grid;
-
   border: 5px solid var(--black);
 }
