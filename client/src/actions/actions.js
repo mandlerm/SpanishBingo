@@ -6,6 +6,7 @@ export const SET_CATEGORY = "SET_CATEGORY"
 export const SET_LEVEL = "SET_LEVEL"
 export const SET_BOARD = "SET_BOARD"
 export const COUNTDOWN = "COUNTDOWN"
+export const STOP_TIMER = "STOP_TIMER"
 export const DISPLAY_GAME = "DISPLAY_GAME"
 export const CLICK_CARD = "CLICK_CARD"
 
@@ -67,4 +68,8 @@ export function currentGameBoard(board) {
 export function timerCountdown(timer) {
   console.log("calling timer")
   return { type: COUNTDOWN, timer }
+}
+
+export function stopTimer(start) {
+  return { type: STOP_TIMER, start }
 }
