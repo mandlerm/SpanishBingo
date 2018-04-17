@@ -8,3 +8,8 @@
   color: peru;
   border: 5px solid var(--yellow);
 }
+
+.clock {
+  font-size: 5em;
+  font-size-adjust: auto;
+}
