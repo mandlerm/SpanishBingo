@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux"
 import Card from "../components/game/card"
 import { currentGameBoard } from "../actions/actions"
 
-//***** How do I update state with current board????
+//***** How do I update state with current board????***********//
 class Board extends React.Component {
   // componentWillMount() {
   //   let shuffledGameArray = this.props.state.cards.cards.sort(function(a, b) {

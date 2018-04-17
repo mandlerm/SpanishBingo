@@ -27,7 +27,12 @@ class Card extends React.Component {
           alt={this.props.display.english}
           width="100%"
           height="100%"
-          onClick={e => this.handleClick(this.props.display)}
+          onClick={e => {
+            {
+              console.log("audio", this.props.display.audio)
+            }
+            this.handleClick(this.props.display)
+          }}
         />
       </figure>
     )
