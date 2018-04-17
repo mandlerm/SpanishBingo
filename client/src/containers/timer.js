@@ -8,9 +8,15 @@ import "./timer.css"
 import ReactInterval from "react-interval"
 // import { fetchLevels, setLevel } from "../actions/actions"
 //toggle levels
-
+//https://www.npmjs.com/package/react-interval
 class Timer extends React.Component {
   render() {
+    let enabled = true
+    if (this.props.level === 0) {
+      enabled = false
+      console.log("timer done")
+      return <h1>GAME OVER</h1>
+    }
     return (
       <div className="timer">
         Timer: <br />
@@ -24,51 +30,7 @@ class Timer extends React.Component {
     )
   }
 }
-// const Completionist = () => <span>Need to figure this out</span>
-//
-//
-// //do i need to call an action when timer is up??!!???
-// const renderer = ({ hours, minutes, seconds, completed }) => {
-//   if (completed) {
-//     // Render a complete state
-//
-//     return <Completionist />
-//   } else {
-//     // Render a countdown
-//     return (
-//       <span>
-//         {hours}:{minutes}:{seconds}
-//       </span>
-//     )
-//   }
-// }
-//
-// class Timer extends React.Component {
-//   renderTimer() {
-//     let timer = this.props.level * 1000
-//
-//     return (
-//       <Countdown
-//         className="clock"
-//         date={Date.now() + 5000}
-//         intervalDelay={500}
-//         precision={0}
-//         renderer={renderer}
-//       />
-//     )
-//   }
-//
-//   render() {
-//     // console.log("state", this.props.state)
-//     return (
-//       <div className="timer">
-//         Timer: <br />
-//         {this.renderTimer()}
-//       </div>
-//     )
-//   }
-// }
-//
+
 function mapStateToProps(state) {
   console.log("state in timer", state)
   return {
