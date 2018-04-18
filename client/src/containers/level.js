@@ -15,7 +15,6 @@ class Level extends React.Component {
       return "Loading"
     }
     return this.props.level.map(level => {
-      console.log("level choice: ", level)
       return (
         <button
           onClick={() => this.props.setLevel(level.level)}

@@ -9,6 +9,8 @@ export const COUNTDOWN = "COUNTDOWN"
 export const STOP_TIMER = "STOP_TIMER"
 export const DISPLAY_GAME = "DISPLAY_GAME"
 export const CLICK_CARD = "CLICK_CARD"
+export const START = "START"
+export const RESET = "RESET"
 
 export function fetchCategories() {
   return dispatch => {
@@ -33,18 +35,16 @@ export function fetchLevels() {
 }
 
 export function setCategory(gameChoice) {
-  console.log("cateogory name", gameChoice)
   return dispatch => {
     return fetch(`/api/cards?q=sample`)
       .then(response => response.json())
       .then(cards => {
-        dispatch({ type: SET_CATEGORY, payload: cards })
+        dispatch({ type: SET_CATEGORY, payload: { cards } })
       })
   }
 }
 
 export function setLevel(levelChoice) {
-  console.log("level choice", levelChoice)
   let setup = {}
   switch (levelChoice) {
     case "Easy":
@@ -65,6 +65,11 @@ export function currentGameBoard(board) {
   return { type: SET_BOARD, payload: board }
 }
 
+export function startTimer(timer) {
+  console.log("calling timer", timer)
+  return { type: START, payload: timer }
+}
+
 export function timerCountdown(timer) {
   console.log("calling timer")
   return { type: COUNTDOWN, timer }
@@ -72,4 +77,9 @@ export function timerCountdown(timer) {
 
 export function stopTimer(start) {
   return { type: STOP_TIMER, start }
+}
+
+export function resetTimer() {
+  console.log("trying to reset timer")
+  return { type: RESET }
 }

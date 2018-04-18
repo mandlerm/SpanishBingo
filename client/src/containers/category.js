@@ -2,11 +2,35 @@ import React from "react"
 import { connect } from "react-redux"
 import "./category.css"
 import { bindActionCreators } from "redux"
-import { fetchCategories, setCategory } from "../actions/actions"
+import {
+  fetchCategories,
+  setCategory,
+  startTimer,
+  resetTimer
+} from "../actions/actions"
 
 class Category extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
   componentDidMount() {
     this.props.fetchCategories()
+  }
+
+  handleClick = (cards, timer) => {
+    console.log("inside handle click", cards, timer)
+    this.props.resetTimer()
+    this.props.setCategory(cards)
+    setTimeout(() => {
+      this.props.startTimer(timer)
+    }, 2000)
+    // this.props.startTimer(timer)
+
+    // this.props.setCategory(cat.db_name)
+    // this.props.startTimer(this.props.timer)
   }
 
   renderCategories() {
@@ -14,9 +38,11 @@ class Category extends React.Component {
       return "Loading"
     }
     return this.props.category.map(cat => {
+      console.log("props in render cat", this.props, this.props.timer)
+      let timer = this.props.timer
       return (
         <button
-          onClick={() => this.props.setCategory(cat.db_name)}
+          onClick={e => this.handleClick(cat.db_name, timer, e)}
           className="lined thin catButton"
           key={cat.name}
           value={cat.name}>
@@ -38,12 +64,16 @@ class Category extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    category: state.category.categories
+    category: state.category.categories,
+    timer: state.timer.timer
   }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchCategories, setCategory }, dispatch)
+  return bindActionCreators(
+    { fetchCategories, setCategory, startTimer, resetTimer },
+    dispatch
+  )
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category)

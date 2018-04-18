@@ -19,10 +19,11 @@ class Timer extends React.Component {
         Timer: <br />
         <ReactCountdownClock
           className="clock"
-          seconds={this.props.level}
+          seconds={this.props.timer}
           color="#000"
           alpha={0.9}
           size={100}
+          paused={this.props.pause}
           onComplete={() => this.gameOver()}
         />
       </div>
@@ -31,10 +32,11 @@ class Timer extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log("state in timer", state)
+  console.log("inside timer", state.timer)
   return {
-    level: state.timer.timer,
-    start: state.timer.start
+    time: state.timer.timer,
+    start: state.timer.start,
+    pause: state.timer.pause
   }
 }
 
