@@ -11,6 +11,9 @@ export const DISPLAY_GAME = "DISPLAY_GAME"
 export const CLICK_CARD = "CLICK_CARD"
 export const START = "START"
 export const RESET = "RESET"
+export const RESET_TIMER = "RESET_TIMER"
+export const ADD_POINT = "ADD_POINT"
+export const RESET_SCORE = "RESET_SCORE"
 
 export function fetchCategories() {
   return dispatch => {
@@ -81,5 +84,13 @@ export function stopTimer(start) {
 
 export function resetTimer() {
   console.log("trying to reset timer")
-  return { type: RESET }
+  return { type: RESET_TIMER }
+}
+
+export function addPoint() {
+  return { type: ADD_POINT }
+}
+
+export function resetScore() {
+  return { type: RESET_SCORE }
 }

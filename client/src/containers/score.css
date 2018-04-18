@@ -5,6 +5,11 @@
   font-size: 1.7em;
   padding: 10px;
   line-height: 40px;
-  color: peru;
+  font-weight: lighter;
+  color: white;
   border: 5px solid var(--yellow);
+}
+
+.number {
+  font-size: 4em;
 }

@@ -1,24 +1,30 @@
 import React from "react"
 import { connect } from "react-redux"
+import "./score.css"
 // import "./timer.css"
 import { bindActionCreators } from "redux"
-// import { fetchLevels, setLevel } from "../actions/actions"
-//toggle levels
+import { addPoint, resetScore } from "../actions/actions"
 
-export default class Score extends React.Component {
+class Score extends React.Component {
   render() {
-    return <div className="score">I am the score</div>
+    console.log("SCORE REDUCER", this.props)
+    return (
+      <div className="score">
+        Score:
+        <span className="number"> {this.props.score.score}</span>
+      </div>
+    )
   }
 }
-//
-// function mapStateToProps(state) {
-//   return {
-//     level: state.level.levels
-//   }
-// }
-//
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({ fetchLevels, setLevel }, dispatch)
-// }
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(Level)
+
+function mapStateToProps(state) {
+  return {
+    score: state.score
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ addPoint, resetScore }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Score)
