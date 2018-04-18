@@ -1,4 +1,4 @@
-export default (state = { timer: 60, start: true, pause: true }, action) => {
+export default (state = { timer: 0, start: true, pause: true }, action) => {
   console.log("timer reducer payload", action.payload)
   switch (action.type) {
     case "START":
@@ -8,7 +8,7 @@ export default (state = { timer: 60, start: true, pause: true }, action) => {
       return { ...state, start: false, pause: true }
     case "RESET":
       console.log("RESET")
-      return { ...state, timer: 60, pause: true }
+      return { ...state, timer: 0, pause: true }
     default:
       return state
   }

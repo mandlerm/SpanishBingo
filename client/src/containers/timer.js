@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
-import { timerCountdown, stopTimer } from "../actions/actions"
+import { timerCountdown, stopTimer, resetTimer } from "../actions/actions"
 import "./timer.css"
 import ReactCountdownClock from "react-countdown-clock"
 //https://github.com/pughpugh/react-countdown-clock
@@ -9,6 +9,10 @@ import ReactCountdownClock from "react-countdown-clock"
 // need to delay time until game board is loaded
 class Timer extends React.Component {
   componentWillUnmount() {}
+
+  componentWillUpdate() {
+    this.props.resetTimer
+  }
 
   gameOver = () => {
     alert("Game Over")
@@ -41,7 +45,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ timerCountdown, stopTimer }, dispatch)
+  return bindActionCreators({ timerCountdown, stopTimer, resetTimer }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Timer)
