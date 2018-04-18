@@ -41,7 +41,7 @@ sample_game_list = [
     'https://res.cloudinary.com/mandlerm/video/upload/v1522888425/spanish%20bingo%20game%201/el_dedo.ogg'],
   ["tooth", "diente","sample",
     'https://res.cloudinary.com/mandlerm/image/upload/v1522888506/spanish%20bingo%20game%201/el_diente.jpg',
-    'https://res.cloudinary.com/mandlerm/video/upload/v1522888425/spanish%20bingo%20game%201/el_dedo.ogg'],
+    'https://res.cloudinary.com/mandlerm/video/upload/v1522888506/spanish%20bingo%20game%201/el_diente.ogg'],
   ["fire", "el fuego","sample",
     'https://res.cloudinary.com/mandlerm/image/upload/v1522888440/spanish%20bingo%20game%201/el_fuego.jpg',
     'https://res.cloudinary.com/mandlerm/video/upload/v1522888441/spanish%20bingo%20game%201/el_fuego.ogg'],

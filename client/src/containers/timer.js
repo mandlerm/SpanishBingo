@@ -10,10 +10,6 @@ import ReactCountdownClock from "react-countdown-clock"
 class Timer extends React.Component {
   componentWillUnmount() {}
 
-  componentWillUpdate() {
-    this.props.resetTimer
-  }
-
   gameOver = () => {
     alert("Game Over")
   }

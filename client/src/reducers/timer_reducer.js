@@ -6,7 +6,7 @@ export default (state = { timer: 0, start: true, pause: true }, action) => {
       return { ...state, timer: action.payload, pause: false }
     case "STOP_TIMER":
       return { ...state, start: false, pause: true }
-    case "RESET":
+    case "RESET_TIMER":
       console.log("RESET")
       return { ...state, timer: 0, pause: true }
     default:

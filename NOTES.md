@@ -15,6 +15,9 @@ ROUTING
 launch foreman
 foreman start -p 3000
 
+TIMER:
+https://www.npmjs.com/package/react-countdown-now#date
+
 ///working fetch call
 fetch(`/api/game`)
 .then(function(response) {
@@ -117,3 +120,17 @@ return response.json();
 
 const Client = { search };
 export default Client;
+
+BOARD shuffledGameArray // componentWillMount() {
+// let shuffledGameArray = this.props.state.cards.cards.sort(function(a, b) {
+// return 0.5 - Math.random()
+// })
+//
+// //going to return 9 cards for easy game, 16 cards for standard game.
+// let leveledBoard = shuffledGameArray.slice(
+// 0,
+// this.props.state.level.cardNumber
+// )
+// this.props.currentGameBoard(leveledBoard)
+//
+// }
