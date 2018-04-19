@@ -1,13 +1,14 @@
 .score {
   display: grid;
-
   text-align: center;
   font-size: 1.7em;
   padding: 10px;
-  line-height: 40px;
+  /* line-height: 40px; */
   font-weight: lighter;
   color: white;
   border: 5px solid var(--yellow);
+  max-height: 180px;
+  align-self: center;
 }
 
 .number {
