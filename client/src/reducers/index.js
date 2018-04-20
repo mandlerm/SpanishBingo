@@ -5,6 +5,7 @@ import setCategoryReducer from "./set_category_reducer"
 import setGameReducer from "./set_game_reducer"
 import timerReducer from "./timer_reducer"
 import scoreReducer from "./score_reducer"
+import setWordArray from "./word_reducer"
 //import each reducer (need one reducer for each piece of data/state)
 //reducers hold all the state update logic
 //1. game category  2. game level  3. game cards  4. active word  5. score  6. time

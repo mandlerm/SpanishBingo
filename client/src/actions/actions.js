@@ -98,5 +98,6 @@ export function playWord() {
 }
 
 export function setWordArray() {
+  console.log("set word array action")
   return { type: SET_WORD_ARRAY }
 }
