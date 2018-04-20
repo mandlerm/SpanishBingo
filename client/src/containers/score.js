@@ -11,15 +11,16 @@ class Score extends React.Component {
     return (
       <div className="score">
         Score:
-        <span className="number"> {this.props.score.score}</span>
+        <span className="number"> {this.props.score}</span>
       </div>
     )
   }
 }
 
+//why can't I get score: to update. it falls underneath cards
 function mapStateToProps(state) {
   return {
-    score: state.score
+    score: state.cards.score
   }
 }
 

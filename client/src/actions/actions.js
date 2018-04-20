@@ -14,6 +14,8 @@ export const RESET = "RESET"
 export const RESET_TIMER = "RESET_TIMER"
 export const ADD_POINT = "ADD_POINT"
 export const RESET_SCORE = "RESET_SCORE"
+export const PLAY_WORD = "PLAY_WORD"
+export const SET_WORD_ARRAY = "SET_WORD_ARRAY"
 
 export function fetchCategories() {
   return dispatch => {
@@ -64,17 +66,14 @@ export function setLevel(levelChoice) {
 }
 
 export function currentGameBoard(board) {
-  console.log("board ", board)
   return { type: SET_BOARD, payload: board }
 }
 
 export function startTimer(timer) {
-  console.log("calling timer", timer)
   return { type: START, payload: timer }
 }
 
 export function timerCountdown(timer) {
-  console.log("calling timer")
   return { type: COUNTDOWN, timer }
 }
 
@@ -83,7 +82,6 @@ export function stopTimer(start) {
 }
 
 export function resetTimer() {
-  console.log("trying to reset timer")
   return { type: RESET_TIMER }
 }
 
@@ -93,4 +91,12 @@ export function addPoint() {
 
 export function resetScore() {
   return { type: RESET_SCORE }
+}
+
+export function playWord() {
+  return { type: PLAY_WORD }
+}
+
+export function setWordArray() {
+  return { type: SET_WORD_ARRAY }
 }

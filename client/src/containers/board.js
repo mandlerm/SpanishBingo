@@ -2,10 +2,22 @@ import React from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import Card from "../components/game/card"
-import { currentGameBoard } from "../actions/actions"
+import { currentGameBoard, playWord, setWordArray } from "../actions/actions"
 
 //***** How do I update state with current board????***********//
 class Board extends React.Component {
+  componentDidMount() {
+    let wordArray = this.props.state.cards.cards.sort(function(a, b) {
+      return 0.5 - Math.random()
+    })
+
+    setTimeout(this.startGame, 5000)
+  }
+
+  startGame() {
+    console.log("game is starting")
+  }
+
   renderBoard() {
     if (!this.props.state.cards.cards) {
       return "loading"
@@ -36,7 +48,10 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ currentGameBoard }, dispatch)
+  return bindActionCreators(
+    { currentGameBoard, playWord, setWordArray },
+    dispatch
+  )
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board)

@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import "../CSS/newGame.css"
 import Card from "../components/game/card"
 import { bindActionCreators } from "redux"
-import { setCategory } from "../actions/actions"
+import { setCategory, resetScore } from "../actions/actions"
 //toggle levels
 
 class NewGame extends React.Component {
@@ -23,7 +23,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ setCategory }, dispatch)
+  return bindActionCreators({ setCategory, resetScore }, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(NewGame)

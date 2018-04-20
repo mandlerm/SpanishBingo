@@ -32,7 +32,6 @@ class Timer extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log("inside timer", state.timer)
   return {
     time: state.timer.timer,
     start: state.timer.start,
