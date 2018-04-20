@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import { connect } from "react-redux"
 // import store from "./index.js"
 import "./App.css"
 import Welcome from "./components/welcome"
@@ -8,7 +7,7 @@ import PlayContainer from "./components/playContainer"
 import WelcomeContainer from "./components/welcomeContainer"
 import WordList from "./components/wordList"
 import Header from "./components/header"
-import ItemList from "./components/wordList"
+
 // import configureStore from "./store/configureStore"
 
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

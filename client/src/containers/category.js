@@ -34,7 +34,6 @@ class Category extends React.Component {
       return "Loading"
     }
     return this.props.category.map(cat => {
-      console.log("props in render cat", this.props, this.props.timer)
       // let timer = this.props.timer
       return (
         <button

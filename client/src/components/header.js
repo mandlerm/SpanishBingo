@@ -1,6 +1,6 @@
 import React from "react"
 // import { Link } from "react-router"
-import { BrowserRouter, Route, NavLink, Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import "../App.css"
 
 const link = {

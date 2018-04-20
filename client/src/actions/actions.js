@@ -53,13 +53,13 @@ export function setLevel(levelChoice) {
   let setup = {}
   switch (levelChoice) {
     case "Easy":
-      setup = { cardCount: 9, time: 60 }
+      setup = { cardCount: 9 }
       break
     case "Not quite as easy":
-      setup = { cardCount: 16, time: 60 }
+      setup = { cardCount: 16 }
       break
-    case "Fast":
-      setup = { cardCount: 16, time: 30 }
+    default:
+      setup = { cardCount: 16 }
       break
   }
   return { type: SET_LEVEL, payload: setup }
