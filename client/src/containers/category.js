@@ -20,13 +20,9 @@ class Category extends React.Component {
     this.props.fetchCategories()
   }
 
-  handleClick = (cards, timer) => {
-    console.log("inside handle click", cards, timer)
-    this.props.resetTimer()
+  handleClick = cards => {
     this.props.setCategory(cards)
-    setTimeout(() => {
-      this.props.startTimer(timer)
-    }, 2000)
+
     // this.props.startTimer(timer)
 
     // this.props.setCategory(cat.db_name)
@@ -39,10 +35,10 @@ class Category extends React.Component {
     }
     return this.props.category.map(cat => {
       console.log("props in render cat", this.props, this.props.timer)
-      let timer = this.props.timer
+      // let timer = this.props.timer
       return (
         <button
-          onClick={e => this.handleClick(cat.db_name, timer, e)}
+          onClick={e => this.handleClick(cat.db_name, e)}
           className="lined thin catButton"
           key={cat.name}
           value={cat.name}>

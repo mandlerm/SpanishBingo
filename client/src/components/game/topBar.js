@@ -2,6 +2,7 @@ import React from "react"
 import "./topBar.css"
 import { Icon } from "react-fa"
 import Word from "./wordDisplay"
+import NewGame from "../../containers/newGame"
 // import Timer from "../../containers/timer"
 import Score from "../../containers/score"
 
@@ -11,8 +12,8 @@ const TopBar = props => {
   return (
     <div className="bar">
       <Word />
-
       <Score />
+      <NewGame />
     </div>
   )
 }
