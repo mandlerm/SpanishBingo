@@ -23,6 +23,7 @@ class Board extends React.Component {
     console.log("audio setup", this.shuffle)
     let wordArray = this.shuffle(leveledBoard)
     console.log("shuffle", wordArray)
+    // this.props.setWordArray(wordArray)
     return wordArray
 
     // let wordArray = new Promise() {
