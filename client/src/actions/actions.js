@@ -99,12 +99,14 @@ export function playWord() {
 }
 
 export function setWordArray() {
-  return dispatch => {
-    dispatch({ type: LOADING_WORD_ARRAY })
-    return fetch(`/api/level`)
-      .then(response => response.json())
-      .then(levels => {
-        dispatch({ type: SET_WORD_ARRAY, payload: words })
-      })
-  }
+  return { type: SET_WORD_ARRAY }
+
+  // dispatch => {
+  //   dispatch({ type: LOADING_WORD_ARRAY })
+  //   return fetch(`/api/level`)
+  //     .then(response => response.json())
+  //     .then(levels => {
+  //       dispatch({ type: SET_WORD_ARRAY, payload: words })
+  //     })
+  // }
 }
