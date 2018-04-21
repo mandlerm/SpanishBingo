@@ -18,10 +18,10 @@ class Board extends React.Component {
     console.log("game is starting")
   }
 
-  setUpAudio() {
+  setUpAudio(leveledBoard) {
     // let shuffle = this.shuffle
     console.log("audio setup", this.shuffle)
-    let wordArray = this.shuffle()
+    let wordArray = this.shuffle(leveledBoard)
     console.log("shuffle", wordArray)
     return wordArray
 
@@ -62,10 +62,10 @@ class Board extends React.Component {
       this.props.state.level.cardNumber
     )
 
-    // let wordArray = this.setUpAudio()
+    let wordArray = this.setUpAudio(leveledBoard)
     // this.props.setWordArray(wordArray)
     // console.log("state", this.props, this.props.state)
-    console.log("render board")
+    console.log("render board", leveledBoard, wordArray)
     return leveledBoard.map(card => <Card display={card} key={card.english} />)
   }
 
