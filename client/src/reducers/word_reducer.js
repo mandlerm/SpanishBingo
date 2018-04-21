@@ -1,4 +1,4 @@
-export default (state = { currentWord: "", wordArray: [] }, action) => {
+export default (state = { words: [] }, action) => {
   switch (action.type) {
     case "PLAY_WORD":
       return { ...state, currentWord: action.payload }
@@ -9,8 +9,8 @@ export default (state = { currentWord: "", wordArray: [] }, action) => {
       return { ...state, wordArray: action.payload }
     case "LOADING_WORDS":
       return { ...state, loading: true }
-    case "FETCH_WORDS  ":
-      return { ...state, categories: action.payload, loading: false }
+    case "FETCH_WORDS":
+      return { ...state, words: action.payload, loading: false }
 
     default:
       return state

@@ -1,27 +1,40 @@
 import React from "react"
 import { bindActionCreators } from "redux"
 import { connect } from "react-redux"
-
-import { currentGameBoard, playWord, setWordArray } from "../actions/actions"
+import { fetchAllWords } from "../actions/actions"
 
 class WordList extends React.Component {
+  componentDidMount() {
+    this.props.fetchAllWords()
+  }
+
+  displayWords = () => {
+    if (!this.props.state.words) {
+      return "Loading"
+    }
+    return this.props.state.words.words.map(word => {
+      return (
+        <h2>
+          {word.english} - {word.spanish}{" "}
+        </h2>
+      )
+    })
+  }
+
   render() {
-    return <h1>I will be a list of words for each category</h1>
+    console.log("state", this.props.state)
+    return <h1>{this.displayWords()}</h1>
   }
 }
 
-//
-// function mapStateToProps(state) {
-//   return {
-//     state: state
-//   }
-// }
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    { currentGameBoard, playWord, setWordArray },
-    dispatch
-  )
+function mapStateToProps(state) {
+  return {
+    state: state
+  }
 }
 
-export default connect(null, mapDispatchToProps)(WordList)
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchAllWords }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(WordList)

@@ -114,12 +114,14 @@ export function setWordArray(words) {
 }
 
 export function fetchAllWords() {
+  console.log("fetching words")
   return dispatch => {
     dispatch({ type: LOADING_WORDS })
-    return fetch(`/api/games`)
+    return fetch(`/api/words`)
       .then(response => response.json())
-      .then(categories => {
-        dispatch({ type: FETCH_WORDS, payload: categories })
+      .then(words => {
+        console.log(words)
+        dispatch({ type: FETCH_WORDS, payload: words })
       })
   }
 }
