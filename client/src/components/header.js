@@ -17,9 +17,11 @@ const Header = () => (
       <NavLink
         to="/"
         style={link}
-        activeStyle={{
-          background: "darkblue"
-        }}>
+        activeStyle={
+          {
+            // background: "darkblue"
+          }
+        }>
         Welcome to Spanish Bingo
       </NavLink>
     </h1>
