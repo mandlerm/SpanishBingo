@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
+import { Link } from "react-router-dom"
 import "./category.css"
 import { bindActionCreators } from "redux"
 import {
@@ -41,7 +42,7 @@ class Category extends React.Component {
           className="lined thin catButton"
           key={cat.name}
           value={cat.name}>
-          {cat.name}
+          <Link to="/play"> {cat.name}</Link>
         </button>
       )
     })

@@ -98,8 +98,8 @@ export function playWord() {
   return { type: PLAY_WORD }
 }
 
-export function setWordArray() {
-  return { type: SET_WORD_ARRAY }
+export function setWordArray(words) {
+  return { type: SET_WORD_ARRAY, payload: words }
 
   // dispatch => {
   //   dispatch({ type: LOADING_WORD_ARRAY })

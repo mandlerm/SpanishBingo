@@ -7,16 +7,13 @@ import "./home.css"
 const Home = props => {
   return (
     <div className="home">
-      <Router>
-        <button className="home">
-          <Link to="/">RETURN HOME </Link>
-        </button>
-      </Router>
-      <Router>
-        <button className="lists">
-          <Link to="/words">See all words </Link>
-        </button>
-      </Router>
+      <button className="home">
+        <Link to="/">RETURN HOME </Link>
+      </button>
+
+      <button className="lists">
+        <Link to="/wordlist">See all words </Link>
+      </button>
     </div>
   )
 }

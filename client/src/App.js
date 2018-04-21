@@ -1,5 +1,11 @@
 import React, { Component } from "react"
-import { BrowserRouter, Route, Switch } from "react-router-dom"
+import {
+  BrowserRouter,
+  Route,
+  Router,
+  IndexRoute,
+  Switch
+} from "react-router-dom"
 // import store from "./index.js"
 import "./App.css"
 import Welcome from "./components/welcome"
@@ -25,7 +31,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={WelcomeContainer} />
               <Route exact path="/wordlist" component={WordList} />
-              <Route path="/:game" component={PlayContainer} />
+              <Route path="/play" component={PlayContainer} />
               <Route component={Welcome} />
             </Switch>
           </div>

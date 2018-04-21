@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux"
 import Card from "../components/game/card"
 import { currentGameBoard, playWord, setWordArray } from "../actions/actions"
 import ReduxPromise from "redux-promise"
+import shuffle from "../helpers"
 
 //***** How do I update state with current board????***********//
 class Board extends React.Component {
