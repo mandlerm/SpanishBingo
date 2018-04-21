@@ -16,6 +16,7 @@ export const ADD_POINT = "ADD_POINT"
 export const RESET_SCORE = "RESET_SCORE"
 export const PLAY_WORD = "PLAY_WORD"
 export const SET_WORD_ARRAY = "SET_WORD_ARRAY"
+export const LOADING_WORD_ARRAY = "LOADING_WORD_ARRAY"
 
 export function fetchCategories() {
   return dispatch => {
@@ -98,6 +99,12 @@ export function playWord() {
 }
 
 export function setWordArray() {
-  console.log("set word array action")
-  return { type: SET_WORD_ARRAY }
+  return dispatch => {
+    dispatch({ type: LOADING_WORD_ARRAY })
+    return fetch(`/api/level`)
+      .then(response => response.json())
+      .then(levels => {
+        dispatch({ type: SET_WORD_ARRAY, payload: words })
+      })
+  }
 }

@@ -2,7 +2,6 @@ import React from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import Card from "../components/game/card"
-import { currentGameBoard, playWord, setWordArray } from "../actions/actions"
 
 //***** How do I update state with current board????***********//
 class Board extends React.Component {
@@ -18,15 +17,21 @@ class Board extends React.Component {
   }
 
   setUpAudio() {
-    let shuffle = this.shuffle
-    let wordArray = shuffle()
+    // let shuffle = this.shuffle
+    console.log("audio setup", this.shuffle)
+    let wordArray = this.shuffle()
+    console.log("shuffle", wordArray)
+    return wordArray
+
+    // this.props.setWordArray(wordArray)
+
     // let wordArray = new Promise() {
     //   shuffle())
     // })
 
-    wordArray.then(array => {
-      console.log(array)
-    })
+    // wordArray.then(array => {
+    //   console.log(array)
+    // })
     //
     // console.log("arra", wordArray)
     // wordArray.then(array => {
@@ -57,7 +62,8 @@ class Board extends React.Component {
       this.props.state.level.cardNumber
     )
 
-    this.setUpAudio()
+    let wordArray = this.setUpAudio()
+    console.log(wordArray)
 
     return leveledBoard.map(card => <Card display={card} key={card.english} />)
   }

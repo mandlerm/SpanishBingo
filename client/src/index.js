@@ -6,6 +6,8 @@ import { Provider } from "react-redux"
 import { createStore, applyMiddleware, compose } from "redux"
 import { browserHistory } from "react-router"
 import thunk from "redux-thunk"
+import { currentGameBoard, playWord, setWordArray } from "../actions/actions"
+import ReduxPromise from "redux-promise"
 import rootReducer from "./reducers"
 import { composeWithDevTools } from "redux-devtools-extension"
 import "./index.css"
@@ -13,7 +15,7 @@ import "./index.css"
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(thunk),
+    applyMiddleware(thunk, ReduxPromise),
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 )
