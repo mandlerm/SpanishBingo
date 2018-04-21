@@ -7,9 +7,9 @@ import ReduxPromise from "redux-promise"
 
 //***** How do I update state with current board????***********//
 class Board extends React.Component {
-  shuffle = () => {
+  shuffle = board => {
     console.log("shuffling")
-    return this.props.state.cards.cards.sort(function(a, b) {
+    return board.sort(function(a, b) {
       return 0.5 - Math.random()
     })
   }
@@ -24,8 +24,6 @@ class Board extends React.Component {
     let wordArray = this.shuffle()
     console.log("shuffle", wordArray)
     return wordArray
-
-    // this.props.setWordArray(wordArray)
 
     // let wordArray = new Promise() {
     //   shuffle())
@@ -56,7 +54,7 @@ class Board extends React.Component {
     if (!this.props.state.cards.cards) {
       return "loading"
     }
-    let shuffledGameArray = this.shuffle()
+    let shuffledGameArray = this.shuffle(this.props.state.cards.cards)
 
     //going to return 9 cards for easy game, 16 cards for standard game.
     let leveledBoard = shuffledGameArray.slice(
@@ -64,9 +62,10 @@ class Board extends React.Component {
       this.props.state.level.cardNumber
     )
 
-    let wordArray = this.setUpAudio()
-    console.log(wordArray)
-
+    // let wordArray = this.setUpAudio()
+    // this.props.setWordArray(wordArray)
+    // console.log("state", this.props, this.props.state)
+    console.log("render board")
     return leveledBoard.map(card => <Card display={card} key={card.english} />)
   }
 
