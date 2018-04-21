@@ -22,7 +22,7 @@ const Header = () => (
             // background: "darkblue"
           }
         }>
-        Welcome to Spanish Bingo
+        Welcome to Spanish Squares
       </NavLink>
     </h1>
     <p className="App-intro">

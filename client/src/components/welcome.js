@@ -4,7 +4,7 @@ class Welcome extends React.Component {
   render() {
     return (
       <div className="intro">
-        <h1>Welcome to Spanish Bingo</h1>
+        <h1>Welcome to Spanish Squares</h1>
         <h3>Where learning Spanish is a game</h3>
         <p className="desc">
           Choose a category. <br />
