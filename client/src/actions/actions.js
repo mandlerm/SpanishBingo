@@ -17,6 +17,8 @@ export const RESET_SCORE = "RESET_SCORE"
 export const PLAY_WORD = "PLAY_WORD"
 export const SET_WORD_ARRAY = "SET_WORD_ARRAY"
 export const LOADING_WORD_ARRAY = "LOADING_WORD_ARRAY"
+export const LOADING_WORDS = "LOADING_WORDS"
+export const FETCH_WORDS = "FETCH_WORDS"
 
 export function fetchCategories() {
   return dispatch => {
@@ -109,4 +111,15 @@ export function setWordArray(words) {
   //       dispatch({ type: SET_WORD_ARRAY, payload: words })
   //     })
   // }
+}
+
+export function fetchAllWords() {
+  return dispatch => {
+    dispatch({ type: LOADING_WORDS })
+    return fetch(`/api/games`)
+      .then(response => response.json())
+      .then(categories => {
+        dispatch({ type: FETCH_WORDS, payload: categories })
+      })
+  }
 }
