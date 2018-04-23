@@ -1,5 +1,5 @@
 import React from "react"
-import "./card.css"
+import "../CSS/index.css"
 import { shape, string } from "prop-types"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"

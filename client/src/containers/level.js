@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import "./level.css"
+import "../CSS/index.css"
 import { bindActionCreators } from "redux"
 import { fetchLevels, setLevel } from "../actions/actions"
 //toggle levels

@@ -1,5 +1,5 @@
 import React from "react"
-import "./wordDisplay.css"
+import "../../CSS/index.css"
 import { Icon } from "react-fa"
 import { connect } from "react-redux"
 

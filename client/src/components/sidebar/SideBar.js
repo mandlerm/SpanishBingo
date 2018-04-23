@@ -2,7 +2,7 @@ import React from "react"
 import Category from "../../containers/category"
 import Level from "../../containers/level"
 import Home from "./home"
-import "./sidebar.css"
+import "../../CSS/index.css"
 
 class Sidebar extends React.Component {
   render() {

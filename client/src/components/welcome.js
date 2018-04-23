@@ -1,5 +1,5 @@
 import React from "react"
-
+import "../CSS/index.css"
 class Welcome extends React.Component {
   render() {
     return (

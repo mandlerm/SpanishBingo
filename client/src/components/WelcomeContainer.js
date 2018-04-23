@@ -1,7 +1,7 @@
 import React from "react"
 import Sidebar from "./sidebar/sidebar"
 import Welcome from "./welcome.js"
-import "./welcome.css"
+import "../index.css"
 
 class WelcomeContainer extends React.Component {
   render() {

@@ -1,6 +1,6 @@
 import React from "react"
 import { BrowserRouter as Router, Link } from "react-router-dom"
-import "./home.css"
+import "../../CSS/index.css"
 
 //clears game board and returns to 'home screen' with welcome and instructions
 
