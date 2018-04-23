@@ -11,13 +11,16 @@ class Word extends React.Component {
   //make a border around the box with some shading/style
   render() {
     return (
-      <div>
+      <div className="word_div">
         <form className="word_box">
           <input className="word" value={this.props.spanish} />
           <input className="word" value={this.props.english} />
-          <caption id="caption">Spanish </caption>
-          <caption id="caption"> English</caption>
         </form>
+        <br />
+        <div id="caption">
+          <caption>Spanish </caption>
+          <caption> English</caption>
+        </div>
       </div>
     )
   }

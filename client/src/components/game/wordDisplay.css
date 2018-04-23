@@ -10,18 +10,23 @@
   color: peru;
 }
 
-.word_box {
+.word_div {
   display: grid;
   grid-template-columns: 1fr 1fr;
   border: 5px solid var(--yellow);
   margin-bottom: 10px;
 }
+.word_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
 #caption {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   font-size: 1.8em;
   margin: 5px;
   font-weight: lighter;
-  text-align: center;
+  text-align: left;
   color: white;
 }
