@@ -6,15 +6,17 @@ import { fetchAllWords } from "../actions/actions"
 class WordList extends React.Component {
   componentDidMount() {
     this.props.fetchAllWords()
+    console.log("words")
   }
 
   displayWords = () => {
     if (!this.props.state.words) {
       return "Loading"
     }
+    console.log(this.props.state)
     return this.props.state.words.words.map(word => {
       return (
-        <h2>
+        <h2 key={word.english}>
           {word.english} - {word.spanish}{" "}
         </h2>
       )
@@ -23,7 +25,15 @@ class WordList extends React.Component {
 
   render() {
     console.log("state", this.props.state)
-    return <h1>{this.displayWords()}</h1>
+    return (
+      <div>
+        {" "}
+        <h1>
+          English - Spanish <br />Word List
+        </h1>
+        {this.displayWords()}
+      </div>
+    )
   }
 }
 

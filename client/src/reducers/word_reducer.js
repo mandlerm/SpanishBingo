@@ -1,5 +1,5 @@
 export default (
-  state = { currentSpanishWord: "", currentEnglishWord: "" },
+  state = { currentSpanishWord: "", currentEnglishWord: "", words: [] },
   action
 ) => {
   switch (action.type) {
