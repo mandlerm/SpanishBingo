@@ -17,8 +17,8 @@ class Word extends React.Component {
         </form>
         <br />
         <div id="caption">
-          <caption>Spanish </caption>
-          <caption> English</caption>
+          <span>Spanish </span>
+          <span> English</span>
         </div>
       </div>
     )
