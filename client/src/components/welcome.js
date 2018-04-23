@@ -7,11 +7,16 @@ class Welcome extends React.Component {
         <h1>Welcome to Spanish Squares</h1>
         <h3>Where learning Spanish is a game</h3>
         <p className="desc">
-          Choose a category. <br />
+          This is a M-MVP. Increased functionality is planned. <br />
           <br />
-          Choose a difficulty level. <br />
+          For now, choose a category (all category selections will take you to
+          Sample game - other categories coming soon) <br />
           <br />
-          After that...well, click and see.
+          A standard board is 16 squares. Select "Easy" under Level for a 9
+          square game. <br />
+          The board will display. Click on any square to hear the word said in
+          Spanish. The word will also be displayed in both Spanish and English
+          in the text box.
         </p>
 
         <h5 className="postscript">
