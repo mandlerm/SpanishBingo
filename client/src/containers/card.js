@@ -1,6 +1,7 @@
 import React from "react"
 import "./card.css"
 import { shape, string } from "prop-types"
+import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import { showWord } from "../actions/actions"
 //individual cards
@@ -14,6 +15,7 @@ class Card extends React.Component {
   handleClick = event => {
     let audio = new Audio(event.audio)
     audio.play()
+    this.props.showWord(event)
   }
 
   render() {
@@ -42,4 +44,16 @@ Card.propTypes = {
     category: string
   })
 }
-export default Card
+
+function mapStateToProps(state) {
+  return {
+    spanish: state.words.currentSpanishWord,
+    english: state.words.currentEnglishWord
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ showWord }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card)
