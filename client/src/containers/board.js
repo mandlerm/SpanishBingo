@@ -8,6 +8,23 @@ import "../CSS/index.css"
 
 //***** How do I update state with current board????***********//
 class Board extends React.Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(this.props)
+
+    if (
+      this.props.state.words.currentEnglishWord &&
+      this.props.state.words.currentEnglishWord != nextState.currentEnglishWord
+    ) {
+      return false
+    } else return true
+  }
+
+  handleClick = event => {
+    let audio = new Audio(event.audio)
+    audio.play()
+    this.props.showWord(event)
+  }
+
   shuffle = board => {
     console.log("shuffling")
     return board.sort(function(a, b) {
@@ -31,7 +48,9 @@ class Board extends React.Component {
       this.props.state.level.cardNumber
     )
 
-    return leveledBoard.map(card => <Card display={card} key={card.english} />)
+    return leveledBoard.map(card => (
+      <Card display={card} key={card.english} handleClick={this.handleClick} />
+    ))
   }
 
   render() {

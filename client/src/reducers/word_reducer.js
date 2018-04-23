@@ -20,6 +20,12 @@ export default (
         currentSpanishWord: action.payload.spanish,
         currentEnglishWord: action.payload.english
       }
+    case "RESET_WORD":
+      return {
+        ...state,
+        currentSpanishWord: "",
+        currentEnglishWord: ""
+      }
 
     default:
       return state

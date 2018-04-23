@@ -7,16 +7,11 @@ import { showWord } from "../actions/actions"
 //individual cards
 
 class Card extends React.Component {
-  constructor(props) {
-    super(props)
-    this.handleClick = this.handleClick.bind(this)
-  }
-  //<h3>this.props.name<h3/>
-  handleClick = event => {
-    let audio = new Audio(event.audio)
-    audio.play()
-    this.props.showWord(event)
-  }
+  // handleClick = event => {
+  //   let audio = new Audio(event.audio)
+  //   audio.play()
+  //   this.props.showWord(event)
+  // }
 
   render() {
     return (

@@ -20,6 +20,7 @@ export const LOADING_WORD_ARRAY = "LOADING_WORD_ARRAY"
 export const LOADING_WORDS = "LOADING_WORDS"
 export const FETCH_WORDS = "FETCH_WORDS"
 export const SHOW_WORD = "SHOW_WORD"
+export const RESET_WORD = "RESET_WORD"
 
 export function fetchCategories() {
   return dispatch => {
@@ -48,7 +49,14 @@ export function setCategory(gameChoice) {
     return fetch(`/api/cards?q=sample`)
       .then(response => response.json())
       .then(cards => {
-        dispatch({ type: SET_CATEGORY, payload: { cards } })
+        dispatch({
+          type: SET_CATEGORY,
+          payload: {
+            cards,
+            currentSpanishWord: "",
+            currentEnglishWord: ""
+          }
+        })
       })
   }
 }
@@ -130,4 +138,8 @@ export function fetchAllWords() {
 export function showWord(word) {
   console.log("selected card", word)
   return { type: SHOW_WORD, payload: word }
+}
+
+export function resetWord() {
+  return { type: RESET_WORD }
 }
