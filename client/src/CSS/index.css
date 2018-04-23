@@ -226,3 +226,10 @@ button {
   display: flex;
   grid-template-columns: 1fr;
 }
+
+/* NEW GAME */
+
+.newGame {
+  display: grid;
+  background-color: violet;
+}

@@ -3,7 +3,6 @@ import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import Card from "./card"
 import { currentGameBoard, playWord, setWordArray } from "../actions/actions"
-import ReduxPromise from "redux-promise"
 import shuffle from "../helpers"
 import "../CSS/index.css"
 

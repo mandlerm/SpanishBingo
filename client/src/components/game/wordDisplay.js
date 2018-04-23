@@ -1,6 +1,5 @@
 import React from "react"
 import "../../CSS/index.css"
-import { Icon } from "react-fa"
 import { connect } from "react-redux"
 
 //component to disply current word with link for play audio

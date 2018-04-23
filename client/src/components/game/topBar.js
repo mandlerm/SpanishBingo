@@ -1,6 +1,5 @@
 import React from "react"
 import "../../CSS/index.css"
-import { Icon } from "react-fa"
 import Word from "./wordDisplay"
 import NewGame from "../../containers/newGame"
 // import Timer from "../../containers/timer"

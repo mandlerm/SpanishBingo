@@ -1,5 +1,5 @@
 import React from "react"
-import WordDisplay from "./wordDisplay"
+
 import Board from "../../containers/board"
 import TopBar from "./topBar.js"
 import "../../CSS/index.css"

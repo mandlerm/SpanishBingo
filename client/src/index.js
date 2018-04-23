@@ -4,12 +4,10 @@ import App from "./App"
 import registerServiceWorker from "./registerServiceWorker"
 import { Provider } from "react-redux"
 import { createStore, applyMiddleware, compose } from "redux"
-import { browserHistory } from "react-router"
 import thunk from "redux-thunk"
-import { currentGameBoard, playWord, setWordArray } from "./actions/actions"
 import ReduxPromise from "redux-promise"
 import rootReducer from "./reducers"
-import { composeWithDevTools } from "redux-devtools-extension"
+// import { composeWithDevTools } from "redux-devtools-extension"
 import "./index.css"
 
 const store = createStore(

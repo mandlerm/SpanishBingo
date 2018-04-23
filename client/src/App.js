@@ -1,11 +1,5 @@
 import React, { Component } from "react"
-import {
-  BrowserRouter,
-  Route,
-  Router,
-  IndexRoute,
-  Switch
-} from "react-router-dom"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 // import store from "./index.js"
 import "./App.css"
 import Welcome from "./components/welcome"
