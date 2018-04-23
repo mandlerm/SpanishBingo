@@ -24,7 +24,6 @@ class Word extends React.Component {
 }
 
 function mapStateToProps(state) {
-  console.log("state in word display", state.words)
   return {
     spanish: state.words.currentSpanishWord,
     english: state.words.currentEnglishWord
