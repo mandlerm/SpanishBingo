@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
-import Card from "../components/game/card"
+import Card from "./card"
 import { currentGameBoard, playWord, setWordArray } from "../actions/actions"
 import ReduxPromise from "redux-promise"
 import shuffle from "../helpers"
@@ -19,39 +19,6 @@ class Board extends React.Component {
     console.log("game is starting")
   }
 
-  setUpAudio(leveledBoard) {
-    // let shuffle = this.shuffle
-    console.log("audio setup", this.shuffle)
-    let wordArray = this.shuffle(leveledBoard)
-    console.log("shuffle", wordArray)
-    // this.props.setWordArray(wordArray)
-    return wordArray
-
-    // let wordArray = new Promise() {
-    //   shuffle())
-    // })
-
-    // wordArray.then(array => {
-    //   console.log(array)
-    // })
-    //
-    // console.log("arra", wordArray)
-    // wordArray.then(array => {
-    //   console.log("arrays", array)
-    //   this.props.setWordArray(array)
-    // })
-    //   .then(() => {
-    //     setTimeout(this.startGame, 5000)
-    //   })
-
-    //
-    // }).then(function(wordArray) {
-    //   console.log("shuffle2", wordArray)
-    //   this.props.setWordArray(wordArray)
-    //   console.log(this.props.state, "state")
-    // })
-  }
-
   renderBoard() {
     if (!this.props.state.cards.cards) {
       return "loading"
@@ -64,10 +31,6 @@ class Board extends React.Component {
       this.props.state.level.cardNumber
     )
 
-    let wordArray = this.setUpAudio(leveledBoard)
-    // this.props.setWordArray(wordArray)
-    // console.log("state", this.props, this.props.state)
-    console.log("render board", leveledBoard, wordArray)
     return leveledBoard.map(card => <Card display={card} key={card.english} />)
   }
 

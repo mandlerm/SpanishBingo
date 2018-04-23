@@ -1,6 +1,8 @@
 import React from "react"
 import "./card.css"
 import { shape, string } from "prop-types"
+import { bindActionCreators } from "redux"
+import { showWord } from "../actions/actions"
 //individual cards
 
 class Card extends React.Component {

@@ -19,6 +19,7 @@ export const SET_WORD_ARRAY = "SET_WORD_ARRAY"
 export const LOADING_WORD_ARRAY = "LOADING_WORD_ARRAY"
 export const LOADING_WORDS = "LOADING_WORDS"
 export const FETCH_WORDS = "FETCH_WORDS"
+export const SHOW_WORD = "SHOW_WORD"
 
 export function fetchCategories() {
   return dispatch => {
@@ -124,4 +125,8 @@ export function fetchAllWords() {
         dispatch({ type: FETCH_WORDS, payload: words })
       })
   }
+}
+
+export function showWord(word) {
+  return { type: SHOW_WORD, payload: word }
 }

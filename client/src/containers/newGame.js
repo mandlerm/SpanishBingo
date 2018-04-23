@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import "../CSS/newGame.css"
-import Card from "../components/game/card"
+import Card from "./card"
 import { bindActionCreators } from "redux"
 import { setCategory, resetScore } from "../actions/actions"
 //toggle levels
