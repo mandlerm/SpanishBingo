@@ -12,9 +12,11 @@ const Word = props => {
 
   return (
     <div>
-      <form className="word">
+      <form className="word_box">
         <input className="word" value={word} />
-        <Icon name="microphone" size="3x" className="mic" />
+        <input className="word" value={word} />
+        <caption id="caption">Spanish </caption>
+        <caption id="caption"> English</caption>
       </form>
     </div>
   )
