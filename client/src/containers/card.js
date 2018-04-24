@@ -7,11 +7,12 @@ import { showWord } from "../actions/actions"
 //individual cards
 
 class Card extends React.Component {
-  // handleClick = event => {
-  //   let audio = new Audio(event.audio)
-  //   audio.play()
-  //   this.props.showWord(event)
-  // }
+  handleClick = event => {
+    let audio = new Audio(event.audio)
+    audio.play()
+    console.log("dispolay", event)
+    this.props.showWord(event)
+  }
 
   render() {
     return (

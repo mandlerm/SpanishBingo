@@ -3,7 +3,7 @@ import categoryReducer from "./category_reducer"
 import levelReducer from "./level_reducer"
 import setCategoryReducer from "./set_category_reducer"
 import setGameReducer from "./set_game_reducer"
-import timerReducer from "./timer_reducer"
+
 import scoreReducer from "./score_reducer"
 import wordReducer from "./word_reducer"
 
@@ -16,7 +16,6 @@ const rootReducer = combineReducers({
   level: levelReducer,
   cards: setCategoryReducer,
   game: setGameReducer,
-  timer: timerReducer,
   score: scoreReducer,
   words: wordReducer
 })

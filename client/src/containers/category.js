@@ -3,12 +3,7 @@ import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import "../CSS/index.css"
 import { bindActionCreators } from "redux"
-import {
-  fetchCategories,
-  setCategory,
-  startTimer,
-  resetTimer
-} from "../actions/actions"
+import { fetchCategories, setCategory, resetWord } from "../actions/actions"
 
 class Category extends React.Component {
   constructor(props) {
@@ -21,8 +16,13 @@ class Category extends React.Component {
     this.props.fetchCategories()
   }
 
-  handleClick = cards => {
+  resetGame = cards => {
     this.props.setCategory(cards)
+    this.props.resetWord()
+  }
+
+  handleClick = cards => {
+    this.resetGame(cards)
 
     // this.props.startTimer(timer)
 
@@ -60,14 +60,13 @@ class Category extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    category: state.category.categories,
-    timer: state.timer.timer
+    category: state.category.categories
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { fetchCategories, setCategory, startTimer, resetTimer },
+    { fetchCategories, setCategory, resetWord },
     dispatch
   )
 }

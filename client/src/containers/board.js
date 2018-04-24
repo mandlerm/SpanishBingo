@@ -6,24 +6,27 @@ import { currentGameBoard, playWord, setWordArray } from "../actions/actions"
 import shuffle from "../helpers"
 import "../CSS/index.css"
 
-//***** How do I update state with current board????***********//
 class Board extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
-    console.log(this.props)
+    console.log("props", nextProps, nextState)
 
-    if (
-      this.props.state.words.currentEnglishWord &&
-      this.props.state.words.currentEnglishWord != nextState.currentEnglishWord
-    ) {
-      return false
-    } else return true
+    //only rerender IF NewGame is selected.  or if Category or Level are selected.
+    //how to test for this?!?
+    // if (
+    //   this.props.state.words.currentEnglishWord &&
+    //   this.props.state.words.currentEnglishWord != nextState.currentEnglishWord
+    // ) {
+    //   return false
+    // } else return true
+    return true
   }
-
-  handleClick = event => {
-    let audio = new Audio(event.audio)
-    audio.play()
-    this.props.showWord(event)
-  }
+  //
+  // handleClick = event => {
+  //   let audio = new Audio(event.audio)
+  //   console.log(event)
+  //   audio.play()
+  //   this.props.showWord(event)
+  // }
 
   shuffle = board => {
     console.log("shuffling")
@@ -48,9 +51,7 @@ class Board extends React.Component {
       this.props.state.level.cardNumber
     )
 
-    return leveledBoard.map(card => (
-      <Card display={card} key={card.english} handleClick={this.handleClick} />
-    ))
+    return leveledBoard.map(card => <Card display={card} key={card.english} />)
   }
 
   render() {

@@ -2,10 +2,7 @@ export default function(
   state = {
     loading: false,
     cards: [],
-    cardNumber: 16,
-
-    currentSpanishWord: "",
-    currentEnglishWord: ""
+    cardNumber: 16
   },
   action
 ) {
@@ -14,8 +11,7 @@ export default function(
       return {
         ...state,
         cards: action.payload.cards,
-        currentSpanishWord: "",
-        currentEnglishWord: "",
+
         loading: false
       }
     default:

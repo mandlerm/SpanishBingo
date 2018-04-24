@@ -52,9 +52,7 @@ export function setCategory(gameChoice) {
         dispatch({
           type: SET_CATEGORY,
           payload: {
-            cards,
-            currentSpanishWord: "",
-            currentEnglishWord: ""
+            cards
           }
         })
       })
