@@ -20,7 +20,7 @@ export default (
         ...state,
         currentSpanishWord: action.payload.spanish,
         currentEnglishWord: action.payload.english,
-        stillPlaying: false
+        stillPlaying: true
       }
     case "RESET_WORD":
       return {

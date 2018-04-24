@@ -8,18 +8,11 @@ import "../CSS/index.css"
 
 class Board extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
-    console.log("props", nextProps.state.words)
-    console.log("state", nextState)
+    console.log("props", nextProps.state.words.stillPlaying)
 
-    //only rerender IF NewGame is selected.  or if Category or Level are selected.
-    //how to test for this?!?
-    // if (
-    //   this.props.state.words.currentEnglishWord &&
-    //   this.props.state.words.currentEnglishWord != nextState.currentEnglishWord
-    // ) {
-    //   return false
-    // } else return true
-    return true
+    if (nextProps.state.words.stillPlaying === true) {
+      return false
+    } else return true
   }
   //
   // handleClick = event => {
@@ -30,14 +23,9 @@ class Board extends React.Component {
   // }
 
   shuffle = board => {
-    console.log("shuffling")
     return board.sort(function(a, b) {
       return 0.5 - Math.random()
     })
-  }
-
-  startGame() {
-    console.log("game is starting")
   }
 
   renderBoard() {
