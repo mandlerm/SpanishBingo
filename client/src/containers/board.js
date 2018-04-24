@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import Card from "./card"
 import { currentGameBoard, playWord, setWordArray } from "../actions/actions"
-import shuffle from "../helpers"
+
 import "../CSS/index.css"
 
 class Board extends React.Component {

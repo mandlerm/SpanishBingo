@@ -1,6 +1,7 @@
 import React from "react"
 import "../../CSS/index.css"
 import { connect } from "react-redux"
+// import NewGame from "../../containers/newGame"
 
 //component to disply current word with link for play audio
 

@@ -2,6 +2,7 @@ import React from "react"
 import "../../CSS/index.css"
 import Word from "./wordDisplay"
 import NewGame from "../../containers/newGame"
+
 // import Timer from "../../containers/timer"
 // import Score from "../../containers/score"
 
@@ -11,7 +12,7 @@ const TopBar = props => {
   return (
     <div className="bar">
       <Word />
-      <NewGame />
+      <NewGame id="newGameButton" />
     </div>
   )
 }
