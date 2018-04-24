@@ -8,13 +8,14 @@ import { setCategory, resetWord } from "../actions/actions"
 
 class NewGame extends React.Component {
   resetGame = () => {
-    this.props.setCategory
-    this.props.resetWord
+    console.log("reset")
+    this.props.setCategory()
+    this.props.resetWord()
   }
 
   render() {
     return (
-      <button className="newGame" onClick={this.resetGame()}>
+      <button className="newGame" onClick={this.resetGame}>
         NEW GAME
       </button>
     )

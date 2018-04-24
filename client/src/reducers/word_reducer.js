@@ -1,5 +1,10 @@
 export default (
-  state = { currentSpanishWord: "", currentEnglishWord: "", words: [] },
+  state = {
+    currentSpanishWord: "",
+    currentEnglishWord: "",
+    stillPlaying: false,
+    words: []
+  },
   action
 ) => {
   switch (action.type) {
@@ -11,17 +16,18 @@ export default (
     case "FETCH_WORDS":
       return { ...state, words: action.payload, loading: false }
     case "SHOW_WORD":
-      console.log("show word", action.payload.spanish)
       return {
         ...state,
         currentSpanishWord: action.payload.spanish,
-        currentEnglishWord: action.payload.english
+        currentEnglishWord: action.payload.english,
+        stillPlaying: false
       }
     case "RESET_WORD":
       return {
         ...state,
         currentSpanishWord: "",
-        currentEnglishWord: ""
+        currentEnglishWord: "",
+        stillPlaying: false
       }
 
     default:

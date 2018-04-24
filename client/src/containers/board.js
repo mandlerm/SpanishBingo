@@ -8,7 +8,8 @@ import "../CSS/index.css"
 
 class Board extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
-    console.log("props", nextProps, nextState)
+    console.log("props", nextProps.state.words)
+    console.log("state", nextState)
 
     //only rerender IF NewGame is selected.  or if Category or Level are selected.
     //how to test for this?!?
