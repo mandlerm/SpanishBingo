@@ -8,8 +8,6 @@ import "../CSS/index.css"
 
 class Board extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
-    console.log("props", nextProps.state.words.stillPlaying)
-
     if (nextProps.state.words.stillPlaying === true) {
       return false
     } else return true

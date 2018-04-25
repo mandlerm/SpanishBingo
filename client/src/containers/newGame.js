@@ -8,7 +8,6 @@ import { setCategory, resetWord } from "../actions/actions"
 
 class NewGame extends React.Component {
   resetGame = () => {
-    console.log("reset")
     this.props.setCategory()
     this.props.resetWord()
   }

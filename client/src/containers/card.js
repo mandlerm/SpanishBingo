@@ -10,7 +10,7 @@ class Card extends React.Component {
   handleClick = event => {
     let audio = new Audio(event.audio)
     audio.play()
-    console.log("dispolay", event)
+
     this.props.showWord(event)
   }
 

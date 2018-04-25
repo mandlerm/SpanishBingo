@@ -132,7 +132,6 @@ export function fetchAllWords() {
 }
 
 export function showWord(word) {
-  console.log("selected card", word)
   return { type: SHOW_WORD, payload: word }
 }
 
