@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+how to use:
+clone repo. in console run 'rake start'
+this will start the server.
 
-Things you may want to cover:
+spanish squares is an mvp game that teaches spanish words using both audio and visual together.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+rails backend.
+react/redux frontend.
